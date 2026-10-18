@@ -6,7 +6,7 @@
     "prepare": "husky",
     "sync": "node scripts/sync-r2-assets.mjs",
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "vite build && rm -rf out && cp -r dist/client out",
     "start": "vite preview",
     "deploy": "vinext-cloudflare deploy",
     "lint": "eslint 'src/**/*.{ts,tsx}' && yarn format",

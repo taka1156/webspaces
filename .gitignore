@@ -45,3 +45,6 @@ storybook-static/*
 
 public/**/contents/*
 public/**/images/*
+/dist/
+.vinext/
+.cloudflare/

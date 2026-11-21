@@ -16,10 +16,17 @@ export const styles = {
     border: `1px solid ${vars.color.border}`,
     borderRadius: '50%'
   }),
+  // 単色ロゴを囲む円形の枠（中のアイコンが円からはみ出さないよう中央寄せ＋切り抜き）
+  snsIconFrame: style({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden'
+  }),
   snsIconMonochrome: style({
-    display: 'block',
-    width: '100%',
-    height: '100%',
+    // 円に内接する正方形（約70.7%）に収まるサイズ
+    width: '70%',
+    height: '70%',
     color: vars.color.text
   })
 };

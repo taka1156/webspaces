@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { BaseLink } from '@/components/shared/BaseLink/BaseLink';
 import { styles } from './SnsIcons.css';
 import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
@@ -15,7 +16,7 @@ export function SnsIcons({ snsIcons }: SnsIconsProps) {
           <BaseLink href={snsIcon.link}>
             {snsIcon.monochrome ? (
               // 単色ロゴは文字色で描画し、ライト/ダークモードに追従させる
-              <span className={styles.snsIcon}>
+              <span className={clsx(styles.snsIcon, styles.snsIconFrame)}>
                 <BaseIcon
                   src={snsIcon.img}
                   alt={snsIcon.name}

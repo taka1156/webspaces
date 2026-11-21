@@ -16,13 +16,13 @@ type BaseLinkProps = {
  *
  * enableNewTabをtrueにすると、新しいタブでリンクを開く
  */
-const BaseLink = ({
+export function BaseLink({
   href,
   className,
   children,
   enableNewTab,
   ...props
-}: BaseLinkProps) => {
+}: BaseLinkProps) {
   const classes = clsx(styles.link, className);
 
   const isInternalLink = () => {
@@ -59,6 +59,4 @@ const BaseLink = ({
       </a>
     );
   }
-};
-
-export { BaseLink };
+}

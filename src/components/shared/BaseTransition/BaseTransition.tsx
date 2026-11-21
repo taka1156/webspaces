@@ -9,7 +9,12 @@ type BaseTransition = {
   children: ReactNode;
 };
 
-const BaseTransition = ({ timeout, classNames, children, flag }: BaseTransition) => {
+export function BaseTransition({
+  timeout,
+  classNames,
+  children,
+  flag
+}: BaseTransition) {
   let configIn = true;
   if (typeof flag !== 'undefined' && typeof flag !== 'object') {
     configIn = flag;
@@ -25,6 +30,4 @@ const BaseTransition = ({ timeout, classNames, children, flag }: BaseTransition)
       {children}
     </CSSTransition>
   );
-};
-
-export { BaseTransition };
+}

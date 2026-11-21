@@ -19,7 +19,7 @@ type BaseImgProps = DefaultImgProps | NextImgProps;
 const isNextImgProps = (props: BaseImgProps): props is NextImgProps =>
   'fill' in props || 'height' in props || 'width' in props;
 
-const BaseImg = forwardRef<HTMLImageElement, BaseImgProps>(
+export const BaseImg = forwardRef<HTMLImageElement, BaseImgProps>(
   ({ className, ...props }, ref) => {
     if (isNextImgProps(props)) {
       return (
@@ -44,5 +44,3 @@ const BaseImg = forwardRef<HTMLImageElement, BaseImgProps>(
 );
 
 BaseImg.displayName = 'BaseImg';
-
-export { BaseImg };

@@ -9,7 +9,7 @@ type ArticleBadgeProps = {
   className?: string;
 };
 
-const ArticleBadge = ({ badgeType, badge }: ArticleBadgeProps) => {
+export function ArticleBadge({ badgeType, badge }: ArticleBadgeProps) {
   return (
     <div className={clsx(styles.common, styles[badgeType])}>
       <BaseText
@@ -26,6 +26,4 @@ const ArticleBadge = ({ badgeType, badge }: ArticleBadgeProps) => {
       />
     </div>
   );
-};
-
-export { ArticleBadge };
+}

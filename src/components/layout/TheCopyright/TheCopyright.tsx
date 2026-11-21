@@ -7,7 +7,7 @@ type TheCopyright = {
   copyrightUrl: string;
 };
 
-const TheCopyright = ({ copyrightUrl }: TheCopyright) => {
+export function TheCopyright({ copyrightUrl }: TheCopyright) {
   const Year = () => dayjs().tz().year();
 
   return (
@@ -21,6 +21,4 @@ const TheCopyright = ({ copyrightUrl }: TheCopyright) => {
       </BaseText>
     </div>
   );
-};
-
-export { TheCopyright };
+}

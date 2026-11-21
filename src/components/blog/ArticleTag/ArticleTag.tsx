@@ -8,7 +8,7 @@ type ArticleTagProps = {
   enableLink?: boolean;
 };
 
-const ArticleTag = ({ tags, enableLink = true }: ArticleTagProps) => {
+export function ArticleTag({ tags, enableLink = true }: ArticleTagProps) {
   return (
     <div className={styles.articleTag}>
       タグ:&nbsp;
@@ -31,6 +31,4 @@ const ArticleTag = ({ tags, enableLink = true }: ArticleTagProps) => {
       )}
     </div>
   );
-};
-
-export { ArticleTag };
+}

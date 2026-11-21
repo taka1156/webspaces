@@ -7,7 +7,7 @@ type TheNavigation = {
   routes: RouteItems;
 };
 
-const TheNavigation = ({ routes }: TheNavigation) => {
+export function TheNavigation({ routes }: TheNavigation) {
   const { isMobile } = useResponsive();
 
   return (
@@ -16,6 +16,4 @@ const TheNavigation = ({ routes }: TheNavigation) => {
       {!isMobile && <NavBarPc routes={routes} />}
     </nav>
   );
-};
-
-export { TheNavigation };
+}

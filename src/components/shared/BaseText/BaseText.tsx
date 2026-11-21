@@ -36,13 +36,13 @@ type BaseTextProps = ComponentProps<'p'> & {
  *
  * color、weight、sizeの組み合わせでテキストのスタイルを変更可能
  */
-const BaseText = ({
+export function BaseText({
   color = 'base',
   weight = 'regular',
   size = 'medium',
   className,
   ...props
-}: BaseTextProps) => {
+}: BaseTextProps) {
   return (
     <p
       {...props}
@@ -54,6 +54,4 @@ const BaseText = ({
       )}
     />
   );
-};
-
-export { BaseText };
+}

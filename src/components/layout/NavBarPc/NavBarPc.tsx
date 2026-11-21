@@ -7,7 +7,7 @@ type NavBarPcProps = {
   routes: RouteItems;
 };
 
-const NavBarPc = ({ routes }: NavBarPcProps) => {
+export function NavBarPc({ routes }: NavBarPcProps) {
   return (
     <div className={styles.navBarPC}>
       <div className={styles.navBarBoxPc}>
@@ -48,6 +48,4 @@ const NavBarPc = ({ routes }: NavBarPcProps) => {
       </div>
     </div>
   );
-};
-
-export { NavBarPc };
+}

@@ -7,7 +7,7 @@ type NavBar = {
   routes: RouteItems;
 };
 
-const NavBar = ({ routes }: NavBar) => {
+export function NavBar({ routes }: NavBar) {
   return (
     <div className={styles.navBar}>
       <div className={styles.navBarBox}>
@@ -45,6 +45,4 @@ const NavBar = ({ routes }: NavBar) => {
       </div>
     </div>
   );
-};
-
-export { NavBar };
+}

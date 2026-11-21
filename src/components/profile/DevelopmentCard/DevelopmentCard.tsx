@@ -25,7 +25,7 @@ const openDialog = (modalRef: RefObject<HTMLDialogElement | null>) => {
   }
 };
 
-const DevelopmentCard = (props: DevelopmentCardProps) => {
+export function DevelopmentCard(props: DevelopmentCardProps) {
   const { thumbnail, title, description, category, tags } = props.article.summary;
 
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -84,6 +84,4 @@ const DevelopmentCard = (props: DevelopmentCardProps) => {
       </article>
     </div>
   );
-};
-
-export { DevelopmentCard };
+}

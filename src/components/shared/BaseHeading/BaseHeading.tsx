@@ -16,7 +16,12 @@ type BaseHeadingProps = {
  *
  * hLvに応じてh1~h6の見出しを表示
  */
-const BaseHeading = ({ hLv, children, className, ...props }: BaseHeadingProps) => {
+export function BaseHeading({
+  hLv,
+  children,
+  className,
+  ...props
+}: BaseHeadingProps) {
   const Heading = `h${hLv}` as ElementType;
 
   return (
@@ -24,6 +29,4 @@ const BaseHeading = ({ hLv, children, className, ...props }: BaseHeadingProps) =
       {children}
     </Heading>
   );
-};
-
-export { BaseHeading };
+}

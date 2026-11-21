@@ -52,7 +52,7 @@ export const generateMetadata = async (props: {
   };
 };
 
-const Category = async (props: { params: CategoryPath }) => {
+export default async function Category(props: { params: CategoryPath }) {
   const { id } = await props.params;
   const category = await getStaticCategory(id);
   const summaryByCategory = category ? category.posts : null;
@@ -68,6 +68,4 @@ const Category = async (props: { params: CategoryPath }) => {
   }
 
   return <BaseText>存在しないカテゴリーです。</BaseText>;
-};
-
-export default Category;
+}

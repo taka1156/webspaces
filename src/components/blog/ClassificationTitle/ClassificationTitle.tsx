@@ -8,7 +8,7 @@ type ClassificationTitleProps = {
   children: ReactNode;
 };
 
-const ClassificationTitle = ({ src, children }: ClassificationTitleProps) => {
+export function ClassificationTitle({ src, children }: ClassificationTitleProps) {
   return (
     <>
       <div className={styles.classificationTitle}>
@@ -24,6 +24,4 @@ const ClassificationTitle = ({ src, children }: ClassificationTitleProps) => {
       <div className={styles.classificationTitleBorder} />
     </>
   );
-};
-
-export { ClassificationTitle };
+}

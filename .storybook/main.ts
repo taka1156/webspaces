@@ -37,7 +37,23 @@ const config: StorybookConfig = {
   },
   viteFinal: async (config) => {
     config.base = './';
-    config.plugins = [...(config.plugins || []), vanillaExtractPlugin()];
+    config.plugins = [
+      ...(config.plugins || []),
+      vanillaExtractPlugin(),
+      // NOTE: GitHub Pagesはサブパス(/webspaces/)配信のため、ルート絶対パスの画像を相対パスに変換する
+      {
+        name: 'storybook-relative-public-path',
+        enforce: 'pre',
+        transform(code, id) {
+          if (!id.includes('/src/') || !/\.(ts|tsx)$/.test(id)) return;
+          if (!/(['"`])\/img\//.test(code)) return;
+          return {
+            code: code.replace(/(['"`])\/img\//g, '$1./img/'),
+            map: null
+          };
+        }
+      }
+    ];
 
     config.resolve!.alias = {
       ...config.resolve?.alias,

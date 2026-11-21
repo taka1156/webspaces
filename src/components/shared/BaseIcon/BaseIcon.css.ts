@@ -2,7 +2,6 @@ import { globalStyle, style } from '@vanilla-extract/css';
 
 const icon = style({
   display: 'inline-block',
-  flexShrink: 0,
   // 画像の形で切り抜き、文字色(currentColor)で塗る（mask-image はコンポーネント側で指定）
   backgroundColor: 'currentColor',
   maskRepeat: 'no-repeat',

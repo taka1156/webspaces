@@ -11,28 +11,21 @@ export const styles = {
     height: '13vh',
     backgroundColor: vars.color.nav
   }),
-  // ロゴを中央に保ったままトグルを右端に置くため 3 カラムで配置する
   navBarHeader: style({
-    display: 'grid',
-    gridTemplateColumns: '1fr auto 1fr',
+    display: 'flex',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
-    selectors: {
-      '&::before': {
-        content: '""'
-      }
-    }
+    width: '100%'
   }),
   navBarThemeToggle: style({
-    justifySelf: 'end',
-    marginRight: 12,
+    marginRight: 8,
     color: vars.color.onPrimary
   }),
   navBarLogo: style({
     margin: 0,
     padding: 8,
     height: 24,
-    width: 140
+    width: 115
   }),
   navBarBox: style({
     display: 'flex',

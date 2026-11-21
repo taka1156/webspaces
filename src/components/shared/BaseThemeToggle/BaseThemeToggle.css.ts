@@ -7,16 +7,12 @@ export const styles = {
     alignItems: 'center',
     width: 36,
     height: 36,
-    padding: 0,
-    margin: 0,
-    color: 'inherit',
     cursor: 'pointer',
-    background: 'transparent',
     border: '1px solid currentColor',
     borderRadius: '50%',
     transition: 'background-color 0.2s ease, transform 0.2s ease',
     ':hover': {
-      backgroundColor: 'rgb(255 255 255 / 15%)',
+      backgroundColor: 'color-mix(in srgb, currentColor 15%, transparent)',
       transform: 'rotate(15deg)'
     },
     ':focus-visible': {

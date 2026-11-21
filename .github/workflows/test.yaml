@@ -14,7 +14,8 @@ on:
       - '.prettierrc.json'
       - '.prettierignore'
       - 'package.json'
-      - 'yarn.lock'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
       - '.nvmrc'
       - '.github/workflows/test.yaml'
   pull_request:
@@ -34,17 +35,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: corepack enable
+      - uses: pnpm/action-setup@v6
 
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable
+      - run: pnpm install --frozen-lockfile
 
-      - run: yarn type-check
+      - run: pnpm type-check
 
-      - run: yarn lint
+      - run: pnpm lint
 
-      - run: yarn test
+      - run: pnpm test

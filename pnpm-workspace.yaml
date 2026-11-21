@@ -1,0 +1,15 @@
+# yarn の npmMinimalAgeGate: 0 と同等（公開直後のバージョンも解決する）
+minimumReleaseAge: 0
+
+# yarn の resolutions から移行
+overrides:
+  '@types/react': 19.2.17
+  '@types/react-dom': 19.2.3
+
+# pnpm はデフォルトで依存パッケージのビルドスクリプトを実行しないため、必要なものだけ許可する
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true

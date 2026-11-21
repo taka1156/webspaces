@@ -126,7 +126,7 @@ expect(container.firstChild).toMatchInlineSnapshot(`...`);
 expect(container.firstChild).toMatchSnapshot();
 ```
 
-Update snapshots deliberately with `yarn test-update` only when the UI change is intentional.
+Update snapshots deliberately with `pnpm test-update` only when the UI change is intentional.
 
 ---
 
@@ -150,7 +150,7 @@ MSW (Mock Service Worker) is the preferred tool for intercepting HTTP requests i
 MSW is not yet installed; add it when writing integration tests that require network interception.
 
 ```bash
-yarn add -D msw
+pnpm add -D msw
 ```
 
 Follow the [MSW setup guide](https://mswjs.io/docs/getting-started) to configure handlers.
@@ -205,6 +205,6 @@ For each utility/hook test, verify:
 ## Running Tests
 
 ```bash
-yarn test              # Run all tests once
-yarn test-update       # Re-run and update snapshots
+pnpm test              # Run all tests once
+pnpm test-update       # Re-run and update snapshots
 ```

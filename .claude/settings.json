@@ -11,6 +11,7 @@
       "Bash(git push --force *)",
       "Bash(yarn add *)",
       "Bash(yarn dlx *)",
+      "Bash(pnpm dlx *)",
       "Bash(npm install *)",
       "Bash(npm i *)",
       "Bash(npx *)",

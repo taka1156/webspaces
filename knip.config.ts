@@ -23,8 +23,7 @@ const config: KnipConfig = {
     'inquirer',
     'typescript-eslint',
     // vinext-cloudflare deploy が内部で利用
-    'wrangler',
-    'yarn-audit-fix'
+    'wrangler'
   ]
 };
 

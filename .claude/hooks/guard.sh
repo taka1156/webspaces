@@ -33,10 +33,10 @@ case "$tool" in
     grep -qE "${S}git[[:space:]]+push([[:space:]].*)?[[:space:]](--force(-with-lease)?|-f|--delete|-d)([[:space:]]|=|$)" <<<"$cmd" && block "git push --force / --delete"
     grep -qE "${S}find[[:space:]].*-delete" <<<"$cmd" && block "find -delete"
 
-    # --- install (yarn install is allowed) ---
-    grep -qE "${S}yarn[[:space:]]+(global[[:space:]]+)?(add|dlx|up|upgrade)([[:space:]]|$)" <<<"$cmd" && block "yarn add/dlx/up"
-    grep -qE "${S}(npm|pnpm|bun)[[:space:]]+(install|i|add|ci)([[:space:]]|$)" <<<"$cmd" && block "npm/pnpm/bun install"
-    grep -qE "${S}(npx|pnpx|bunx)([[:space:]]|$)" <<<"$cmd" && block "npx/pnpx/bunx"
+    # --- install (pnpm install is allowed) ---
+    grep -qE "${S}pnpm[[:space:]]+(-g[[:space:]]+|--global[[:space:]]+)?(add|dlx|up|update|upgrade)([[:space:]]|$)" <<<"$cmd" && block "pnpm add/dlx/up"
+    grep -qE "${S}(npm|yarn|bun)[[:space:]]+(install|i|add|ci|dlx)([[:space:]]|$)" <<<"$cmd" && block "npm/yarn/bun install"
+    grep -qE "${S}(npx|pnpx|pnx|bunx)([[:space:]]|$)" <<<"$cmd" && block "npx/pnpx/pnx/bunx"
     grep -qE "${S}(pip|pip3|pipx|uv[[:space:]]+pip)[[:space:]]+install" <<<"$cmd" && block "pip install"
     grep -qE "${S}(sudo[[:space:]]+)?(apt|apt-get|yum|dnf|apk)[[:space:]]+(install|add)" <<<"$cmd" && block "system package install"
     grep -qE "${S}brew[[:space:]]+install" <<<"$cmd" && block "brew install"

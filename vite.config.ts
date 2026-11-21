@@ -1,7 +1,7 @@
 /// <reference types="vitest" >
 import { resolve } from 'node:path';
 import { defineConfig, loadEnv, type Plugin, type PluginOption } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import vinext from 'vinext';
@@ -66,6 +66,9 @@ export default defineConfig(({ mode }) => {
       globals: true,
       setupFiles: ['setupTest.ts'],
       environment: 'jsdom',
+      // Node 25+ は Web Storage が既定で有効になり、Node 側の localStorage が
+      // jsdom の localStorage を上書きしてしまうため、テストワーカーでは無効化する
+      execArgv: ['--no-experimental-webstorage'],
       reporters: ['default'],
       coverage: {
         reporter: ['json', 'html'],

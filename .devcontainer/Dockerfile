@@ -1,4 +1,4 @@
-FROM node:24-slim
+FROM node:26-slim
 
 WORKDIR /workspace
 
@@ -27,6 +27,10 @@ echo "Asia/Tokyo" > /etc/timezone
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
+
+# Node 25+ には corepack が同梱されないため pnpm を直接インストールする
+# (以降のバージョンは package.json の packageManager に合わせて pnpm が自動で切り替える)
+RUN npm install -g pnpm@12.21.0
 
 RUN <<-EOF
 curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh

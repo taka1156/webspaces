@@ -3,7 +3,7 @@
   "dockerComposeFile": "./docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "yarn install && yarn husky",
+  "postCreateCommand": "pnpm install && pnpm husky",
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
@@ -16,13 +16,13 @@
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
         "anthropic.claude-code",
-        "username.errorlens"
+        "usernamehw.errorlens"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
-        "editor.codeActionOnSave": {
+        "editor.codeActionsOnSave": {
           "source.fixAll.eslint": "explicit"
         },
         "eslint.codeActionsOnSave.mode": "all",

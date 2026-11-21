@@ -33,7 +33,7 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const Tags = async () => {
+export default async function Tags() {
   const tags = await getStaticTags();
   const hasTags = tags != null && tags.length > 0;
 
@@ -49,6 +49,4 @@ const Tags = async () => {
       )}
     </div>
   );
-};
-
-export default Tags;
+}

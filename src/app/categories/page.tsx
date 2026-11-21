@@ -35,7 +35,7 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const Categories = async () => {
+export default async function Categories() {
   const categories = await getStaticCategories();
   const hasCategories = categories != null && categories.length > 0;
 
@@ -51,6 +51,4 @@ const Categories = async () => {
       )}
     </div>
   );
-};
-
-export default Categories;
+}

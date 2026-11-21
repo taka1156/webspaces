@@ -1,25 +1,26 @@
 # Webspaces
 
-Next.js で構築し、Cloudflare Pages にデプロイした個人ブログサイトです。
+Next.js（[vinext](https://github.com/cloudflare/vinext) 経由）で構築し、Cloudflare Workers に静的アセットとしてデプロイした個人ブログサイトです。
 
 [English version](README.md)
 
 ## 技術スタック
 
-| カテゴリ               | 技術                             |
-| ---------------------- | -------------------------------- |
-| フレームワーク         | Next.js 16 (App Router)          |
-| 言語                   | TypeScript                       |
-| スタイリング           | vanilla-extract                  |
-| テスト                 | Vitest, Testing Library          |
-| コンポーネントカタログ | Storybook                        |
-| デプロイ               | Cloudflare Pages (wrangler 経由) |
+| カテゴリ               | 技術                                               |
+| ---------------------- | -------------------------------------------------- |
+| フレームワーク         | Next.js 16 (App Router) on vinext                  |
+| 言語                   | TypeScript                                         |
+| スタイリング           | vanilla-extract                                    |
+| テスト                 | Vitest, Testing Library                            |
+| コンポーネントカタログ | Storybook                                          |
+| デプロイ               | Cloudflare Workers（静的アセット、Workers Builds） |
 
 ## コンテンツ管理
 
 - 記事は**プライベートリポジトリ**で管理し、作者自身が開発した SSG/CMS ツール [brite](https://github.com/taka1156/brite)（ドッグフーディング）で静的 JSON に変換
 - 生成した JSON ファイルは **Cloudflare R2** に保存され、ビルド時に取得される
-- ビルド時は環境変数 `R2_URL` / `R2_BUCKET` で R2 エンドポイントを指定し、未設定の場合は `public/` ディレクトリにフォールバック
+- `yarn sync` が環境変数 `R2_ENDPOINT` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` を使って `public/` にダウンロードし（未設定時はローカルの MinIO `http://localhost:9000`）、各ページはビルド時に `public/` から読み込む
+- 全ページと OGP 画像をビルド時に生成するため、デプロイされる Worker にサーバー処理はない
 
 ## ディレクトリ構成
 
@@ -37,18 +38,21 @@ src/
   utils/
     ssg/         # R2 からのデータ取得 (brite.ts)
     marked/      # Markdown レンダリング (marked + shiki)
-    cloudflare/  # Cloudflare 固有のユーティリティ (getBaseUrl)
+    site/        # サイト URL のユーティリティ (getBaseUrl)
+    ogp/         # OGP 画像のパス・メタデータ生成
     dayjs/       # 日付ユーティリティ
 scripts/
   sync-r2-assets.mjs  # R2 からアセットを public/ に同期
+  generate-ogp.mjs    # OGP 画像を public/ogp/ に生成（ビルド前に実行）
+  ogp/                # OGP 画像の描画処理
 ```
 
 ## コマンド
 
 ```bash
-yarn dev          # 開発サーバー起動（ポート 8000）
-yarn build        # Next.js ビルド
-yarn deploy       # ビルド + Cloudflare Pages デプロイ
+yarn dev          # 開発サーバー起動（ポート 3000）
+yarn build        # OGP 画像生成 + vinext ビルド（事前に yarn sync が必要）
+yarn deploy       # ビルド + Cloudflare Workers デプロイ
 yarn sync         # R2 アセットを public/ に同期
 yarn test         # Vitest テスト実行
 yarn storybook    # Storybook 起動（ポート 8000）

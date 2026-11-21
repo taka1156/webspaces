@@ -17,7 +17,8 @@
     "test": "vitest run",
     "test-update": "vitest --update",
     "storybook": "storybook dev -p 8000",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "knip": "knip"
   },
   "dependencies": {
     "@shikijs/langs": "^4.4.1",

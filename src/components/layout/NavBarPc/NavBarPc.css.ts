@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   navBarPC: style({
@@ -8,7 +9,7 @@ export const styles = {
     zIndex: 2,
     width: '100%',
     height: 60,
-    backgroundColor: 'rgb(100 149 237 / 90%)',
+    backgroundColor: vars.color.nav,
     overflowY: 'scroll'
   }),
   navBarLogoPc: style({
@@ -39,6 +40,11 @@ export const styles = {
     padding: 0,
     margin: 0
   }),
+  navBarThemeTogglePc: style({
+    flexShrink: 0,
+    alignSelf: 'center',
+    color: vars.color.onPrimary
+  }),
   navListItemLinkPc: style({
     display: 'flex',
     justifyContent: 'center',
@@ -47,7 +53,7 @@ export const styles = {
     marginTop: 10
   }),
   navListItemTextPc: style({
-    color: 'white',
+    color: vars.color.onPrimary,
     margin: '0 auto'
   }),
   navListItemImgPc: style({

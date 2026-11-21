@@ -2,10 +2,6 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { ArticleDate } from './ArticleDate';
 
-vi.mock('@/components/shared/BaseImg/BaseImg', () => ({
-  BaseImg: ({ alt }: { alt: string }) => <img alt={alt} />
-}));
-
 vi.mock('@/components/shared/BaseText/BaseText', () => ({
   BaseText: ({ children }: { children: React.ReactNode }) => <p>{children}</p>
 }));
@@ -15,7 +11,9 @@ vi.mock('@/utils/dayjs', () => ({
     (date?: string) => ({
       tz: () => ({
         format: (fmt: string) => {
-          if (!date) return '--/--/--';
+          if (!date) {
+            return '--/--/--';
+          }
           const d = new Date(date);
           if (fmt === 'YYYY/M/D') {
             return `${d.getUTCFullYear()}/${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
@@ -50,13 +48,13 @@ describe('ArticleDate', () => {
     expect(screen.getByText(/--\/--\/--/)).toBeInTheDocument();
   });
 
-  it('日付アイコンの alt テキストが正しい', () => {
+  it('日付アイコンのラベルが正しい', () => {
     render(
       <ArticleDate
         createdAt='2023-06-15T00:00:00Z'
         updatedAt='2023-06-20T00:00:00Z'
       />
     );
-    expect(screen.getByAltText('日付')).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: '日付' })).toBeInTheDocument();
   });
 });

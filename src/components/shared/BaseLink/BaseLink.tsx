@@ -28,20 +28,19 @@ export function BaseLink({
   const isInternalLink = () => {
     /**
      * ルーティングか、外部リンクどちらか判定する。
-     * httpを含まなければ、内部リンク
+     * http:// または https:// で始まらなければ、内部リンク
      */
-    return href.indexOf('http') === -1;
+    return !/^https?:\/\//.test(href);
   };
 
   if (isInternalLink()) {
-    if (enableNewTab) {
-      props.target = '_blank';
-      props.rel = 'noopener noreferrer';
-    }
+    const newTabProps = enableNewTab
+      ? { target: '_blank', rel: 'noopener noreferrer' }
+      : {};
 
     /* 内部リンク */
     return (
-      <Link {...props} href={href} className={classes}>
+      <Link {...props} {...newTabProps} href={href} className={classes}>
         {children}
       </Link>
     );

@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   navIconBox: style({
@@ -16,12 +17,12 @@ export const styles = {
     width: 52,
     height: 52,
     padding: 4,
-    backgroundColor: 'rgb(100 149 237 / 90%)',
+    backgroundColor: vars.color.nav,
     borderRadius: 6,
-    boxShadow: '0 4px 16px rgba(100, 149, 237, 0.45)',
+    boxShadow: `0 4px 16px ${vars.color.primaryShadow}`,
     transition: 'box-shadow 0.2s ease, transform 0.2s ease',
     ':hover': {
-      boxShadow: '0 6px 20px rgba(100, 149, 237, 0.6)',
+      boxShadow: `0 6px 20px ${vars.color.primaryShadow}`,
       transform: 'scale(1.05)'
     }
   }),
@@ -38,10 +39,10 @@ export const styles = {
     width: '55%',
     maxHeight: 280,
     overflowY: 'auto',
-    backgroundColor: 'white',
-    border: '1px solid rgb(100 149 237 / 40%)',
+    backgroundColor: vars.color.surfaceRaised,
+    border: `1px solid ${vars.color.border}`,
     borderRadius: 10,
-    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+    boxShadow: `0 8px 24px ${vars.color.shadow}`,
     '::-webkit-scrollbar': {
       width: 6
     },
@@ -50,7 +51,7 @@ export const styles = {
     },
     '::-webkit-scrollbar-thumb': {
       width: '100%',
-      backgroundColor: 'rgb(100 149 237 / 50%)',
+      backgroundColor: vars.color.primary,
       borderRadius: 6
     },
     '@media': {
@@ -67,10 +68,10 @@ export const styles = {
     marginBottom: 'auto'
   }),
   indexListHeading: style({
-    color: 'rgb(100 149 237)',
+    color: vars.color.primaryText,
     textAlign: 'center',
     letterSpacing: '0.1em',
-    borderBottom: '1px solid rgb(100 149 237 / 30%)',
+    borderBottom: `1px solid ${vars.color.border}`,
     paddingBottom: 8,
     marginBottom: 4
   }),
@@ -80,15 +81,15 @@ export const styles = {
   }),
   indexListItem: style({
     fontSize: 14,
-    color: 'rgb(80 120 210)',
+    color: vars.color.text,
     textDecoration: 'none',
     cursor: 'pointer',
     display: 'block',
     padding: '4px 0',
-    borderBottom: '1px solid rgb(211 211 211 / 60%)',
+    borderBottom: `1px solid ${vars.color.borderSubtle}`,
     transition: 'color 0.15s ease, padding-left 0.15s ease',
     ':hover': {
-      color: 'rgb(100 149 237)',
+      color: vars.color.primaryText,
       paddingLeft: 4
     },
     '@media': {
@@ -112,12 +113,12 @@ export const styles = {
     width: 52,
     height: 52,
     padding: 4,
-    backgroundColor: 'rgb(100 149 237 / 90%)',
+    backgroundColor: vars.color.nav,
     borderRadius: 6,
-    boxShadow: '0 4px 16px rgba(100, 149, 237, 0.45)',
+    boxShadow: `0 4px 16px ${vars.color.primaryShadow}`,
     transition: 'box-shadow 0.2s ease, transform 0.2s ease',
     ':hover': {
-      boxShadow: '0 6px 20px rgba(100, 149, 237, 0.6)',
+      boxShadow: `0 6px 20px ${vars.color.primaryShadow}`,
       transform: 'scale(1.05)'
     }
   }),
@@ -129,10 +130,10 @@ export const styles = {
     width: 240,
     maxHeight: 220,
     overflowY: 'auto',
-    backgroundColor: 'white',
-    border: '1px solid rgb(100 149 237 / 40%)',
+    backgroundColor: vars.color.surfaceRaised,
+    border: `1px solid ${vars.color.border}`,
     borderRadius: 10,
-    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+    boxShadow: `0 8px 24px ${vars.color.shadow}`,
     '::-webkit-scrollbar': {
       width: 6
     },
@@ -141,7 +142,7 @@ export const styles = {
     },
     '::-webkit-scrollbar-thumb': {
       width: '100%',
-      backgroundColor: 'rgb(100 149 237 / 50%)',
+      backgroundColor: vars.color.primary,
       borderRadius: 6
     }
   })

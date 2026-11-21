@@ -1,17 +1,18 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   baseHeading2RelativeArticleList: style({
     padding: '0.4em 0.5em',
-    color: '#494949',
+    color: vars.color.textHeading,
     textAlign: 'left',
-    background: '#f4f4f4',
-    borderLeft: '3px solid cornflowerblue'
+    background: vars.color.surface,
+    borderLeft: `3px solid ${vars.color.primary}`
   }),
   baseHeading3RelativeArticleList: style({
-    color: 'rgb(100 149 237)',
+    color: vars.color.primaryText,
     textAlign: 'left',
-    borderBottom: '1px solid #eaecef'
+    borderBottom: `1px solid ${vars.color.border}`
   }),
   baseTextRelativeArticleList: style({
     marginLeft: 5,

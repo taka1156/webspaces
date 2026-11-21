@@ -11,9 +11,12 @@ import {
 
 type BaseTextProps = ComponentProps<'p'> & {
   /**
-   * - Base: #333
-   * - Strong: #B3B3B3
-   * - Highlight: #616161
+   * ライト/ダークモードで切り替わる（値は vars.color を参照）
+   * - Base: #333 / #e6e8eb
+   * - Muted: #767676 / #9ba1aa (補助テキスト用)
+   * - Highlight: #616161 / #c3c8cf
+   * - White: #fff (ブランドカラー上の文字)
+   * - Theme: #3a6fd8 / #8fb3f5 (テーマ色の文字。コントラスト確保のため main より濃い/明るい)
    */
   color?: FONT_COLOR;
   /**
@@ -26,7 +29,7 @@ type BaseTextProps = ComponentProps<'p'> & {
    * - Small: 14px
    * - Medium: 16px
    * - Large: 18px
-   * - Extra Large: 22px
+   * - Extra Large: 24px
    */
   size?: FONT_SIZE;
 };

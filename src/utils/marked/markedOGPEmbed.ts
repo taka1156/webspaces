@@ -20,7 +20,9 @@ const markedOgpCard = (): MarkedExtension => ({
 
       start(src) {
         const match = ISOLATED_URL_START.exec(src);
-        if (!match) return undefined;
+        if (!match) {
+          return undefined;
+        }
         // グループ1(先頭 or "\n\n")の長さぶんずらして、URL自体の開始位置を返す
         return match.index + match[1].length;
       },
@@ -29,7 +31,9 @@ const markedOgpCard = (): MarkedExtension => ({
         // 呼び出し時点で既に「ブロック境界」にいる前提なので ^ から始まればOK
         // ただし後方は「空行 or 文字列末尾」のみ許可(単一改行だけでは不可)
         const match = ISOLATED_URL_TOKEN.exec(src);
-        if (!match) return undefined;
+        if (!match) {
+          return undefined;
+        }
 
         const token: OgpCardToken = {
           type: 'ogpCard',

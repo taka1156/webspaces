@@ -1,4 +1,5 @@
 import { responsiveDown } from '@/utils/breakpoint';
+import { vars } from '@/constants/theme.css';
 import { globalStyle } from '@vanilla-extract/css';
 
 /* css reset */
@@ -37,14 +38,14 @@ globalStyle('.box', {
 
 /* markdown */
 globalStyle('.markdown-body h1, .markdown-body h2, .markdown-body h3', {
-  color: '#494949',
-  background: '#f4f4f4',
-  borderLeft: '3px solid cornflowerblue',
+  color: vars.color.textHeading,
+  background: vars.color.surface,
+  borderLeft: `3px solid ${vars.color.primary}`,
   padding: '0.4em 0.5em'
 });
 
 globalStyle('.markdown-body img', {
-  border: '0.2px solid cornflowerblue',
+  border: `0.2px solid ${vars.color.border}`,
   padding: '5px'
 });
 
@@ -53,7 +54,7 @@ globalStyle('.markdown-body a', {
 });
 
 globalStyle('.markdown-body pre', {
-  border: '1px dotted gray'
+  border: `1px dotted ${vars.color.border}`
 });
 
 globalStyle('.markdown-body .container', {
@@ -84,17 +85,17 @@ globalStyle(
 );
 
 globalStyle('.markdown-body .point', {
-  backgroundColor: '#d0e6f6'
+  backgroundColor: vars.color.calloutPoint
 });
 
 globalStyle('.markdown-body .info', {
-  backgroundColor: '#e3f7df'
+  backgroundColor: vars.color.calloutInfo
 });
 
 globalStyle('.markdown-body .warn', {
-  backgroundColor: '#fdf9e2'
+  backgroundColor: vars.color.calloutWarn
 });
 
 globalStyle('.markdown-body .alert', {
-  backgroundColor: '#feebee'
+  backgroundColor: vars.color.calloutAlert
 });

@@ -1,0 +1,207 @@
+<svg viewBox="0 0 1300 480" xmlns="http://www.w3.org/2000/svg" role="img" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block;max-width:100%;height:auto;">
+<title>TypeScript, JavaScript, Go, Moonbit のロゴが画面に散らばり、集まってコンテナとなり積み重なって Webspaces ロゴになるアニメーション</title>
+
+<style>
+  text {
+    font-family: ui-monospace, "SF Mono", "Consolas", monospace;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  .badge-text { font-size: 24px; }
+
+  .cube-shape {
+    fill: none;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .wordmark {
+    font-size: 90px;
+    font-weight: 500;
+    fill: #e6e8eb;
+    text-anchor: start;
+    animation: wordmark-op 6s ease-in-out infinite;
+  }
+
+  .scene { animation: scene-op 6s ease-in-out infinite; }
+
+  @keyframes scene-op {
+    0%   { opacity: 1; }
+    95%  { opacity: 1; }
+    99%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes wordmark-op {
+    0%   { opacity: 0; }
+    60%  { opacity: 0; }
+    68%  { opacity: 1; }
+    90%  { opacity: 1; }
+    97%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+</style>
+
+<g class="scene">
+
+  <!-- ============ TypeScript group -> large blue base cube ============ -->
+  <g transform="translate(366,283)">
+    <!-- scattered badges -->
+    <g transform="rotate(-12)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-246,-223;-246,-223;0,0;0,0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#3178c6"/>
+      <text class="badge-text" fill="#ffffff">.ts</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(9)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="784,-193;784,-193;0,0;0,0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#3178c6"/>
+      <text class="badge-text" fill="#ffffff">.ts</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-7)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-286,147;-286,147;0,0;0,0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#3178c6"/>
+      <text class="badge-text" fill="#ffffff">.ts</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(15)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="834,117;834,117;0,0;0,0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#3178c6"/>
+      <text class="badge-text" fill="#ffffff">.ts</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- cube outline (fades in as badges converge) -->
+    <g class="cube-shape" stroke="#2f6fed">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.15;0.30;1" dur="6s" repeatCount="indefinite"/>
+      <polygon points="0,-77 67,-38.5 67,38.5 0,77 -67,38.5 -67,-38.5"/>
+      <path d="M0,0 L0,-77 M0,0 L67,38.5 M0,0 L-67,38.5"/>
+    </g>
+  </g>
+
+  <!-- ============ Go group -> teal mid cube ============ -->
+  <g transform="translate(411,228)">
+    <g transform="rotate(10)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="539,-168;539,-168;0,0;0,0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#00ADD8"/>
+      <text class="badge-text" fill="#ffffff">.go</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-8)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-261,-78;-261,-78;0,0;0,0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#00ADD8"/>
+      <text class="badge-text" fill="#ffffff">.go</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(13)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="689,192;689,192;0,0;0,0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#00ADD8"/>
+      <text class="badge-text" fill="#ffffff">.go</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-14)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-111,-168;-111,-168;0,0;0,0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#00ADD8"/>
+      <text class="badge-text" fill="#ffffff">.go</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <g class="cube-shape" stroke="#14b8a6">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.25;0.40;1" dur="6s" repeatCount="indefinite"/>
+      <polygon points="0,-64 55.7,-32 55.7,32 0,64 -55.7,32 -55.7,-32"/>
+      <path d="M0,0 L0,-64 M0,0 L55.7,32 M0,0 L-55.7,32"/>
+    </g>
+  </g>
+
+  <!-- ============ Moonbit group -> coral cube ============ -->
+  <g transform="translate(336,203)">
+    <g transform="rotate(-10)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="164,217;164,217;0,0;0,0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#ff6b57"/>
+      <text class="badge-text" fill="#ffffff">.mbt</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(11)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="714,137;714,137;0,0;0,0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#ff6b57"/>
+      <text class="badge-text" fill="#ffffff">.mbt</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-16)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-186,147;-186,147;0,0;0,0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#ff6b57"/>
+      <text class="badge-text" fill="#ffffff">.mbt</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(8)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="564,-83;564,-83;0,0;0,0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#ff6b57"/>
+      <text class="badge-text" fill="#ffffff">.mbt</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <g class="cube-shape" stroke="#ff6b57">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.35;0.50;1" dur="6s" repeatCount="indefinite"/>
+      <polygon points="0,-54 47,-27 47,27 0,54 -47,27 -47,-27"/>
+      <path d="M0,0 L0,-54 M0,0 L47,27 M0,0 L-47,27"/>
+    </g>
+  </g>
+
+  <!-- ============ JavaScript group -> gold topmost cube ============ -->
+  <g transform="translate(311,158)">
+    <g transform="rotate(13)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="339,-103;339,-103;0,0;0,0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#f7c948"/>
+      <text class="badge-text" fill="#1a1a1a">.js</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-9)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="-251,92;-251,92;0,0;0,0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#f7c948"/>
+      <text class="badge-text" fill="#1a1a1a">.js</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(17)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="909,72;909,72;0,0;0,0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#f7c948"/>
+      <text class="badge-text" fill="#1a1a1a">.js</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="rotate(-11)">
+      <animateTransform attributeName="transform" type="translate" additive="sum"
+        values="89,252;89,252;0,0;0,0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+      <rect x="-28" y="-28" width="56" height="56" rx="10" fill="#f7c948"/>
+      <text class="badge-text" fill="#1a1a1a">.js</text>
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <g class="cube-shape" stroke="#f7c948">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.60;1" dur="6s" repeatCount="indefinite"/>
+      <polygon points="0,-37 32,-18.5 32,18.5 0,37 -32,18.5 -32,-18.5"/>
+      <path d="M0,0 L0,-37 M0,0 L32,18.5 M0,0 L-32,18.5"/>
+    </g>
+  </g>
+
+  <text class="wordmark" x="536" y="278">Webspaces</text>
+
+</g>
+</svg>

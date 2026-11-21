@@ -1,13 +1,18 @@
 import { BaseLink } from '@/components/shared/BaseLink/BaseLink';
 import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
 import { BaseText } from '@/components/shared/BaseText/BaseText';
+import { BaseThemeToggle } from '@/components/shared/BaseThemeToggle/BaseThemeToggle';
 import { styles } from './NavBarPc.css';
 
 type NavBarPcProps = {
   routes: RouteItems;
+  /** ダークモードが有効かどうか */
+  isDark: boolean;
+  /** テーマ切り替えボタンがクリックされたときのイベントハンドラー */
+  onToggleTheme: () => void;
 };
 
-export function NavBarPc({ routes }: NavBarPcProps) {
+export function NavBarPc({ routes, isDark, onToggleTheme }: NavBarPcProps) {
   return (
     <div className={styles.navBarPC}>
       <div className={styles.navBarBoxPc}>
@@ -45,6 +50,11 @@ export function NavBarPc({ routes }: NavBarPcProps) {
             </>
           )}
         </ul>
+        <BaseThemeToggle
+          isDark={isDark}
+          onClick={onToggleTheme}
+          className={styles.navBarThemeTogglePc}
+        />
       </div>
     </div>
   );

@@ -1,16 +1,16 @@
-import { THEME_COLOR } from '@/constants/theme';
+import { vars } from '@/constants/theme.css';
 import { style } from '@vanilla-extract/css';
 
-export type FONT_COLOR = 'base' | 'strong' | 'highlight' | 'white' | 'theme';
+export type FONT_COLOR = 'base' | 'muted' | 'highlight' | 'white' | 'theme';
 export type FONT_WEIGHT = 'regular' | 'bold';
 export type FONT_SIZE = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
 
 export const FONT_COLORS: Record<FONT_COLOR, string> = {
-  base: '#333',
-  strong: '#B3B3B3',
-  highlight: '#616161',
-  white: '#fff',
-  theme: THEME_COLOR.main
+  base: vars.color.text,
+  muted: vars.color.textMuted,
+  highlight: vars.color.textHighlight,
+  white: vars.color.onPrimary,
+  theme: vars.color.primaryText
 };
 
 export const FONT_WEIGHTS: Record<FONT_WEIGHT, number> = {
@@ -30,8 +30,8 @@ export const colorStyles: Record<FONT_COLOR, string> = {
   base: style({
     color: FONT_COLORS.base
   }),
-  strong: style({
-    color: FONT_COLORS.strong
+  muted: style({
+    color: FONT_COLORS.muted
   }),
   highlight: style({
     color: FONT_COLORS.highlight

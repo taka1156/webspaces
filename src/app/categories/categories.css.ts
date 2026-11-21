@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   container: style({
@@ -12,6 +13,6 @@ export const styles = {
     textAlign: 'center',
     margin: 0,
     padding: '0 0 10px',
-    borderBottom: '2.5px solid lightgray'
+    borderBottom: `2.5px solid ${vars.color.border}`
   })
 };

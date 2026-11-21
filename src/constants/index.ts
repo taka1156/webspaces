@@ -33,6 +33,7 @@ const SNS_ICONS: BlogSnsIcons = [
   {
     name: 'GitHub',
     img: '/img/icon/services/github-logo.png',
+    monochrome: true,
     link: 'https://github.com/taka1156'
   },
   {
@@ -43,6 +44,7 @@ const SNS_ICONS: BlogSnsIcons = [
   {
     name: 'x',
     img: '/img/icon/services/x-logo.png',
+    monochrome: true,
     link: 'https://x.com/taka_1156'
   },
   {
@@ -73,6 +75,11 @@ const GITHUB_STATUS: BlogGitHubStatus = {
     'https://github-readme-stats.vercel.app/api?username=taka1156&count_private=true&show_icons=true&hide_border=true&bg_color=white',
   usedLangUrl:
     'https://github-readme-stats.vercel.app/api/top-langs/?username=taka1156&layout=compact&hide_border=true&bg_color=white',
+  // ダークモード用（背景・文字色をテーマトークンに合わせる）
+  darkStatusUrl:
+    'https://github-readme-stats.vercel.app/api?username=taka1156&count_private=true&show_icons=true&hide_border=true&bg_color=14171c&title_color=8fb3f5&text_color=e6e8eb&icon_color=8fb3f5',
+  darkUsedLangUrl:
+    'https://github-readme-stats.vercel.app/api/top-langs/?username=taka1156&layout=compact&hide_border=true&bg_color=14171c&title_color=8fb3f5&text_color=e6e8eb',
   imgAlt: 'github status'
 };
 

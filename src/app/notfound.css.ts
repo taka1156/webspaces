@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { THEME_COLOR } from '@/constants/theme';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   errorWrapper: style({
@@ -15,9 +15,9 @@ export const styles = {
     padding: '1rem',
     fontFamily: 'sans-serif',
     fontWeight: 100,
-    color: '#47494e',
+    color: vars.color.text,
     textAlign: 'center',
-    background: '#f7f8fb',
+    background: vars.color.background,
     WebkitFontSmoothing: 'antialiased'
   }),
   title: style({
@@ -33,7 +33,7 @@ export const styles = {
   errorLink: style({
     display: 'inline-block',
     marginTop: '0.75rem',
-    color: THEME_COLOR.main,
+    color: vars.color.primaryText,
     textDecoration: 'underline'
   })
 };

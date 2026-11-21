@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { BaseHeading } from '@/components/shared/BaseHeading/BaseHeading';
-import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
+import { ClassificationImage } from '@/components/blog/ClassificationImage/ClassificationImage';
 import { styles } from './ClassificationTitle.css';
 
 type ClassificationTitleProps = {
@@ -15,7 +15,7 @@ export function ClassificationTitle({ src, children }: ClassificationTitleProps)
         <BaseHeading hLv='1' className={styles.baseHeading1ClassificationTitle}>
           {children}
         </BaseHeading>
-        <BaseImg
+        <ClassificationImage
           src={src}
           alt='ロゴ'
           className={styles.baseImgClassificationTitle}

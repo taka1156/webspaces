@@ -2,12 +2,17 @@
 import { useEffect, useSyncExternalStore, useState } from 'react';
 import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
 import { useResponsive } from '@/hooks/useResponsive';
+import { useTheme } from '@/hooks/useTheme';
 import { styles } from './SplashAnimation.css';
 import { createPortal } from 'react-dom';
 
 const STORAGE_KEY = 'animation';
 const STARTED_AT_KEY = 'animationStartedAt';
 const DURATION = 4600;
+
+// <img> 内の SVG にはページの CSS が届かないため、ダーク用はワードマークの色を変えた別ファイルを使う
+const getLogoAnimationSrc = (isMobile: boolean, isDark: boolean) =>
+  `/img/icon/utils/logo-animation${isMobile ? '.sp' : ''}${isDark ? '.dark' : ''}.svg`;
 
 const listeners = new Set<() => void>();
 
@@ -56,6 +61,8 @@ export function SplashAnimation({ children }: { children: React.ReactNode }) {
     getServerSnapshot
   );
   const { isMobile } = useResponsive();
+  // スプラッシュはマウント後にのみ描画されるため、data-theme は確定済み
+  const { isDark } = useTheme();
 
   const debug = enableDebugMode();
 
@@ -90,11 +97,7 @@ export function SplashAnimation({ children }: { children: React.ReactNode }) {
   if (showSplash) {
     return createPortal(
       <BaseImg
-        src={
-          isMobile
-            ? '/img/icon/utils/logo-animation.sp.svg'
-            : '/img/icon/utils/logo-animation.svg'
-        }
+        src={getLogoAnimationSrc(isMobile, isDark)}
         alt='Logo Animation'
         className={styles.splash}
       />,

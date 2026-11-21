@@ -11,6 +11,7 @@ export const styles = {
   articleDateImg: style({
     width: 20,
     height: 20,
+    flexShrink: 0,
     color: vars.color.text
   }),
   articleDateText: style({

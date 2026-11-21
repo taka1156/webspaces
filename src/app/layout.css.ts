@@ -7,6 +7,17 @@ globalStyle('header, footer', {
   margin: 0,
   padding: 0
 });
+
+globalStyle('button', {
+  padding: 0,
+  color: 'inherit',
+  background: 'transparent',
+  border: 'none'
+});
+
+globalStyle('a', {
+  textDecoration: 'none'
+});
 /* css reset */
 
 globalStyle('.app', {

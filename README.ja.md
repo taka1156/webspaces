@@ -19,7 +19,7 @@ Next.js（[vinext](https://github.com/cloudflare/vinext) 経由）で構築し�
 
 - 記事は**プライベートリポジトリ**で管理し、作者自身が開発した SSG/CMS ツール [brite](https://github.com/taka1156/brite)（ドッグフーディング）で静的 JSON に変換
 - 生成した JSON ファイルは **Cloudflare R2** に保存され、ビルド時に取得される
-- `yarn sync` が環境変数 `R2_ENDPOINT` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` を使って `public/` にダウンロードし（未設定時はローカルの MinIO `http://localhost:9000`）、各ページはビルド時に `public/` から読み込む
+- `pnpm sync` が環境変数 `R2_ENDPOINT` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` を使って `public/` にダウンロードし（未設定時はローカルの MinIO `http://localhost:9000`）、各ページはビルド時に `public/` から読み込む
 - 全ページと OGP 画像をビルド時に生成するため、デプロイされる Worker にサーバー処理はない
 
 ## ディレクトリ構成
@@ -50,14 +50,14 @@ scripts/
 ## コマンド
 
 ```bash
-yarn dev          # 開発サーバー起動（ポート 3000）
-yarn build        # OGP 画像生成 + vinext ビルド（事前に yarn sync が必要）
-yarn deploy       # ビルド + Cloudflare Workers デプロイ
-yarn sync         # R2 アセットを public/ に同期
-yarn test         # Vitest テスト実行
-yarn storybook    # Storybook 起動（ポート 8000）
-yarn lint         # ESLint + Prettier チェック
-yarn format:fix   # Prettier による自動フォーマット
+pnpm dev          # 開発サーバー起動（ポート 3000）
+pnpm build        # OGP 画像生成 + vinext ビルド（事前に pnpm sync が必要）
+pnpm deploy       # ビルド + Cloudflare Workers デプロイ
+pnpm sync         # R2 アセットを public/ に同期
+pnpm test         # Vitest テスト実行
+pnpm storybook    # Storybook 起動（ポート 8000）
+pnpm lint         # ESLint + Prettier チェック
+pnpm format:fix   # Prettier による自動フォーマット
 ```
 
 ## ページ一覧

@@ -19,7 +19,7 @@ Personal blog site built with Next.js (via [vinext](https://github.com/cloudflar
 
 - Articles are managed in a **private repository** and converted to static JSON by [brite](https://github.com/taka1156/brite), the author's own SSG/CMS tool (dogfooding)
 - Generated JSON files are stored in **Cloudflare R2** and fetched at build time
-- `yarn sync` downloads them into `public/` using `R2_ENDPOINT` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` (defaults to a local MinIO at `http://localhost:9000`); pages read them from `public/` at build time
+- `pnpm sync` downloads them into `public/` using `R2_ENDPOINT` / `R2_BUCKET` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` (defaults to a local MinIO at `http://localhost:9000`); pages read them from `public/` at build time
 - All pages and OGP images are generated at build time, so the deployed Worker has no server-side code
 
 ## Directory Structure
@@ -50,14 +50,14 @@ scripts/
 ## Commands
 
 ```bash
-yarn dev          # Start dev server on port 3000
-yarn build        # Generate OGP images + vinext build (requires yarn sync first)
-yarn deploy       # Build + deploy to Cloudflare Workers
-yarn sync         # Sync R2 assets to public/
-yarn test         # Run Vitest tests
-yarn storybook    # Start Storybook on port 8000
-yarn lint         # ESLint + Prettier check
-yarn format:fix   # Auto-format with Prettier
+pnpm dev          # Start dev server on port 3000
+pnpm build        # Generate OGP images + vinext build (requires pnpm sync first)
+pnpm deploy       # Build + deploy to Cloudflare Workers
+pnpm sync         # Sync R2 assets to public/
+pnpm test         # Run Vitest tests
+pnpm storybook    # Start Storybook on port 8000
+pnpm lint         # ESLint + Prettier check
+pnpm format:fix   # Auto-format with Prettier
 ```
 
 ## Pages

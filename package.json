@@ -6,13 +6,13 @@
     "sync": "node scripts/sync-r2-assets.mjs",
     "dev": "vite dev --port 3000",
     "ogp": "node scripts/generate-ogp.mjs",
-    "build": "yarn ogp && vite build",
+    "build": "pnpm ogp && vite build",
     "start": "vite preview",
     "deploy": "vinext-cloudflare deploy",
-    "lint": "eslint 'src/**/*.{ts,tsx}' && yarn format",
-    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' && yarn format:fix",
-    "format": "yarn prettier --check 'src/**/*.{ts,tsx}'",
-    "format:fix": "yarn prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint 'src/**/*.{ts,tsx}' && pnpm format",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' && pnpm format:fix",
+    "format": "prettier --check 'src/**/*.{ts,tsx}'",
+    "format:fix": "prettier --write 'src/**/*.{ts,tsx}'",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test-update": "vitest --update",
@@ -93,8 +93,7 @@
     "typescript-eslint": "^8.62.1",
     "vite": "8.3.0",
     "vitest": "^4.1.10",
-    "wrangler": "^4.110.0",
-    "yarn-audit-fix": "^10.1.1"
+    "wrangler": "^4.110.0"
   },
   "config": {
     "commitizen": {
@@ -104,10 +103,6 @@
       "config": "./.cz-config.cjs"
     }
   },
-  "resolutions": {
-    "@types/react": "19.2.17",
-    "@types/react-dom": "19.2.3"
-  },
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "pnpm@12.21.0",
   "type": "module"
 }

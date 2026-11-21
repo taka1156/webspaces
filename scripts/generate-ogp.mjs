@@ -1,7 +1,7 @@
 /**
- * OGP 画像を public/ogp/ に生成するスクリプト (yarn build の前段で実行)
+ * OGP 画像を public/ogp/ に生成するスクリプト (pnpm build の前段で実行)
  * 使い方: node scripts/generate-ogp.mjs
- * 前提: yarn sync で public/blog/contents が取得済みであること
+ * 前提: pnpm sync で public/blog/contents が取得済みであること
  *
  * TSX と '@/' エイリアスを解決するため、Vite の module runner で読み込む。
  */

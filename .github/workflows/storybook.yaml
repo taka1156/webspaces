@@ -16,7 +16,8 @@ on:
       - '.storybook/**'
       - 'public/**'
       - 'package.json'
-      - 'yarn.lock'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
       - '.nvmrc'
       - '.github/workflows/storybook.yaml'
   workflow_dispatch:
@@ -32,20 +33,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build-storybook
+        run: pnpm build-storybook
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

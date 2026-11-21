@@ -22,13 +22,16 @@ const markedDetails = (): MarkedExtension => ({
       tokenizer(src) {
         const lines = src.split('\n');
         const openMatch = OPEN_TAG.exec(lines[0]);
-        if (!openMatch) return undefined;
+        if (!openMatch) {
+          return undefined;
+        }
 
         let depth = 1;
         let endLine = -1;
         for (let i = 1; i < lines.length; i++) {
-          if (OPEN_TAG.test(lines[i])) depth++;
-          else if (CLOSE_TAG.test(lines[i])) {
+          if (OPEN_TAG.test(lines[i])) {
+            depth++;
+          } else if (CLOSE_TAG.test(lines[i])) {
             depth--;
             if (depth === 0) {
               endLine = i;
@@ -36,7 +39,9 @@ const markedDetails = (): MarkedExtension => ({
             }
           }
         }
-        if (endLine === -1) return undefined;
+        if (endLine === -1) {
+          return undefined;
+        }
 
         const raw = lines.slice(0, endLine + 1).join('\n');
         const body = lines.slice(1, endLine).join('\n');

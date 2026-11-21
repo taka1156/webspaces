@@ -28,7 +28,9 @@ const resetAnimation = () => {
 };
 
 const resetDebugParams = () => {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined') {
+    return;
+  }
   const url = new URL(window.location.href);
   url.searchParams.delete('debug');
   window.history.replaceState({}, '', url.toString());
@@ -48,7 +50,9 @@ const getServerSnapshot = () => true;
 
 // デバッグモードを有効にするかどうかを判定する関数
 const enableDebugMode = () => {
-  if (typeof window === 'undefined') return false;
+  if (typeof window === 'undefined') {
+    return false;
+  }
   const debug = new URLSearchParams(window.location.search).get('debug');
   return debug === 'true' || debug === '1';
 };
@@ -74,7 +78,9 @@ export function SplashAnimation({ children }: { children: React.ReactNode }) {
     }
 
     // アニメーション表示済み
-    if (!showSplash) return;
+    if (!showSplash) {
+      return;
+    }
 
     // 開始時刻を永続化しておく。再マウントされても最初の1回の値を使い回す
     const startedAt = Number(localStorage.getItem(STARTED_AT_KEY)) || Date.now();
@@ -92,7 +98,9 @@ export function SplashAnimation({ children }: { children: React.ReactNode }) {
     };
   }, [showSplash, debug]);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return null;
+  }
 
   if (showSplash) {
     return createPortal(

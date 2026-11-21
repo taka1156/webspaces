@@ -10,7 +10,9 @@ type ArticleDateProps = {
 
 export function ArticleDate({ createdAt, updatedAt }: ArticleDateProps) {
   const formatDate = (date = '') => {
-    if (date === '') return '--/--/--';
+    if (date === '') {
+      return '--/--/--';
+    }
     return dayjs(date).tz().format('YYYY/M/D');
   };
 

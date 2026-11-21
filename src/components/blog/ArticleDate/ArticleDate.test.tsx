@@ -11,7 +11,9 @@ vi.mock('@/utils/dayjs', () => ({
     (date?: string) => ({
       tz: () => ({
         format: (fmt: string) => {
-          if (!date) return '--/--/--';
+          if (!date) {
+            return '--/--/--';
+          }
           const d = new Date(date);
           if (fmt === 'YYYY/M/D') {
             return `${d.getUTCFullYear()}/${d.getUTCMonth() + 1}/${d.getUTCDate()}`;

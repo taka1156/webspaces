@@ -22,7 +22,7 @@
         "terminal.integrated.defaultProfile.linux": "bash",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
-        "editor.codeActionOnSave": {
+        "editor.codeActionsOnSave": {
           "source.fixAll.eslint": "explicit"
         },
         "eslint.codeActionsOnSave.mode": "all",

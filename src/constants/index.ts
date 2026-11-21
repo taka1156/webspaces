@@ -1,4 +1,4 @@
-import { getBaseUrl } from '@/utils/cloudflare';
+import { getBaseUrl } from '@/utils/site';
 
 const BASE_URL = getBaseUrl();
 

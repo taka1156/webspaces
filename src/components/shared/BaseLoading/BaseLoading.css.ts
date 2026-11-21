@@ -1,4 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 const spinnerAnime = keyframes({
   from: {
@@ -14,7 +15,7 @@ export const styles = {
   spinner: style({
     width: 100,
     height: 100,
-    backgroundColor: 'cornflowerblue',
+    backgroundColor: vars.color.primary,
     borderRadius: '100%',
     animation: `${spinnerAnime} 1s infinite`
   })

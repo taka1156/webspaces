@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   navBar: style({
@@ -8,7 +9,24 @@ export const styles = {
     zIndex: 2,
     width: '100%',
     height: '13vh',
-    backgroundColor: 'rgb(100 149 237 / 90%)'
+    backgroundColor: vars.color.nav
+  }),
+  // ロゴを中央に保ったままトグルを右端に置くため 3 カラムで配置する
+  navBarHeader: style({
+    display: 'grid',
+    gridTemplateColumns: '1fr auto 1fr',
+    alignItems: 'center',
+    width: '100%',
+    selectors: {
+      '&::before': {
+        content: '""'
+      }
+    }
+  }),
+  navBarThemeToggle: style({
+    justifySelf: 'end',
+    marginRight: 12,
+    color: vars.color.onPrimary
   }),
   navBarLogo: style({
     margin: 0,
@@ -45,7 +63,7 @@ export const styles = {
     marginTop: 10
   }),
   navListItemText: style({
-    color: 'white',
+    color: vars.color.onPrimary,
     margin: '0 auto'
   }),
   navListItemImg: style({

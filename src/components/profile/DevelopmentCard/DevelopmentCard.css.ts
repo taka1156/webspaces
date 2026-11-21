@@ -1,4 +1,5 @@
 import { responsiveDown } from '@/utils/breakpoint';
+import { vars } from '@/constants/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
@@ -7,8 +8,8 @@ export const styles = {
     minHeight: 430,
     maxHeight: 540,
     margin: '0 auto',
-    border: 'solid 0.6px rgb(211, 211, 211)',
-    boxShadow: '5px 10px 20px rgba(0, 0, 0, 0.25)',
+    border: `solid 0.6px ${vars.color.border}`,
+    boxShadow: `5px 10px 20px ${vars.color.shadow}`,
     borderRadius: 8,
     display: 'flex',
     flexDirection: 'column',
@@ -26,7 +27,7 @@ export const styles = {
     margin: 0
   }),
   cardImg: style({
-    backgroundColor: 'rgba(211, 211, 211, 0.5)',
+    backgroundColor: vars.color.surface,
     objectFit: 'contain',
     margin: '0 auto',
     width: '100%',
@@ -58,13 +59,13 @@ export const styles = {
     width: '100%',
     padding: 8,
     borderRadius: 8,
-    backgroundColor: 'cornflowerblue',
-    color: '#fff',
+    backgroundColor: vars.color.primaryFill,
+    color: vars.color.onPrimary,
     border: 'none',
     cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
+    transition: 'filter 0.3s ease',
     ':hover': {
-      backgroundColor: 'rgb(100 149 237 / 80%)'
+      filter: 'brightness(1.1)'
     }
   }),
   dialog: style({
@@ -78,6 +79,8 @@ export const styles = {
     padding: 24,
     borderRadius: 8,
     border: 'none',
+    color: vars.color.text,
+    backgroundColor: vars.color.surfaceRaised,
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
     '::backdrop': {
       backgroundColor: 'rgba(0, 0, 0, 0.5)'
@@ -88,7 +91,7 @@ export const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
-    borderBottom: '1px solid rgb(211, 211, 211)',
+    borderBottom: `1px solid ${vars.color.border}`,
     paddingBottom: 8
   }),
   dialogClose: style({
@@ -97,10 +100,10 @@ export const styles = {
     fontSize: 24,
     lineHeight: 1,
     cursor: 'pointer',
-    color: '#666',
+    color: vars.color.textMuted,
     padding: '0 4px',
     ':hover': {
-      color: '#000'
+      color: vars.color.text
     }
   })
 };

@@ -7,7 +7,9 @@ vi.mock('@/hooks/useResponsive', () => ({
 }));
 
 vi.mock('@/components/shared/BaseImg/BaseImg', () => ({
-  BaseImg: ({ alt }: { alt: string }) => <img alt={alt} />
+  BaseImg: ({ alt, src }: { alt: string; src: string }) => (
+    <img alt={alt} src={src} />
+  )
 }));
 
 const localStorageMock = (() => {
@@ -28,6 +30,7 @@ const localStorageMock = (() => {
 
 describe('SplashAnimation', () => {
   beforeEach(() => {
+    delete document.documentElement.dataset.theme;
     localStorageMock.clear();
     vi.stubGlobal('localStorage', localStorageMock);
   });
@@ -71,6 +74,28 @@ describe('SplashAnimation', () => {
 
     await waitFor(() => {
       expect(screen.getByAltText('Logo Animation')).toBeInTheDocument();
+    });
+  });
+
+  it.each([
+    [false, 'light', '/img/icon/utils/logo-animation.svg'],
+    [false, 'dark', '/img/icon/utils/logo-animation.dark.svg'],
+    [true, 'light', '/img/icon/utils/logo-animation.sp.svg'],
+    [true, 'dark', '/img/icon/utils/logo-animation.sp.dark.svg']
+  ])('isMobile=%s・テーマ=%s のとき %s を表示する', async (isMobile, theme, src) => {
+    const { useResponsive } = await import('@/hooks/useResponsive');
+    vi.mocked(useResponsive).mockReturnValue({ isMobile });
+    document.documentElement.dataset.theme = theme;
+    localStorageMock.getItem.mockReturnValue('');
+
+    render(
+      <SplashAnimation>
+        <div>コンテンツ</div>
+      </SplashAnimation>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByAltText('Logo Animation')).toHaveAttribute('src', src);
     });
   });
 });

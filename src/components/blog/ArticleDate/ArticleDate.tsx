@@ -1,4 +1,4 @@
-import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
+import { BaseIcon } from '@/components/shared/BaseIcon/BaseIcon';
 import { BaseText } from '@/components/shared/BaseText/BaseText';
 import { dayjs } from '@/utils/dayjs';
 import { styles } from './ArticleDate.css';
@@ -10,13 +10,15 @@ type ArticleDateProps = {
 
 export function ArticleDate({ createdAt, updatedAt }: ArticleDateProps) {
   const formatDate = (date = '') => {
-    if (date === '') return '--/--/--';
+    if (date === '') {
+      return '--/--/--';
+    }
     return dayjs(date).tz().format('YYYY/M/D');
   };
 
   return (
     <div className={styles.articleDate}>
-      <BaseImg
+      <BaseIcon
         src='/img/icon/utils/date.svg'
         alt='日付'
         className={styles.articleDateImg}

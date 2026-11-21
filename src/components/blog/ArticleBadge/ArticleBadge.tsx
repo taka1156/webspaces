@@ -1,4 +1,4 @@
-import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
+import { ClassificationImage } from '@/components/blog/ClassificationImage/ClassificationImage';
 import { BaseText } from '@/components/shared/BaseText/BaseText';
 import { styles } from './ArticleBadge.css';
 import clsx from 'clsx';
@@ -19,7 +19,7 @@ export function ArticleBadge({ badgeType, badge }: ArticleBadgeProps) {
       >
         {badge.name}
       </BaseText>
-      <BaseImg
+      <ClassificationImage
         className={styles.articleBadgeImg}
         src={badge.image}
         alt={`${badge.name}の画像`}

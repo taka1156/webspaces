@@ -7,6 +7,10 @@ vi.mock('@/hooks/useResponsive', () => ({
   useResponsive: vi.fn()
 }));
 
+vi.mock('@/hooks/useTheme', () => ({
+  useTheme: () => ({ theme: 'light', isDark: false, toggleTheme: vi.fn() })
+}));
+
 vi.mock('@/components/layout/NavBar/NavBar', () => ({
   NavBar: () => <div data-testid='nav-bar' />
 }));

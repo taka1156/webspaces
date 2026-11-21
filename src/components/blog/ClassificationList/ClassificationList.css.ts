@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   classificationList: style({
@@ -7,7 +8,7 @@ export const styles = {
     padding: 0
   }),
   link: style({
-    color: 'black',
+    color: vars.color.text,
     textAlign: 'left',
     wordBreak: 'break-word',
     overflowWrap: 'break-word'
@@ -17,8 +18,13 @@ export const styles = {
     padding: 10,
     margin: 10,
     cursor: 'pointer',
-    border: '1px solid rgb(100 149 237)',
-    borderRadius: 8
+    border: `1px solid ${vars.color.border}`,
+    borderRadius: 8,
+    transition: 'border-color 0.2s ease',
+    // 枠を控えめにした分、ホバー時はブランド色でクリック可能なことを示す
+    ':hover': {
+      borderColor: vars.color.primary
+    }
   }),
   classificationListItemBox: style({
     display: 'flex',

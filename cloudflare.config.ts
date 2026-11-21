@@ -4,6 +4,7 @@ export default defineConfig({
   worker: defineWorker({
     name: 'webspaces',
     compatibilityDate: '2026-10-09',
+    previewUrls: true,
     assets: { notFoundHandling: '404-page' }
   })
 });

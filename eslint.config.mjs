@@ -16,7 +16,10 @@ export default defineConfig([
     plugins: { 'unused-imports': unusedImports },
     rules: {
       '@next/next/no-img-element': 'off',
-      'unused-imports/no-unused-imports': 'error'
+      'unused-imports/no-unused-imports': 'error',
+      // if / else / for / while は1行でも必ずブロック {} で囲む
+      // （eslint-config-prettier で無効化されるため、ここで再度有効化する。"all" は Prettier と競合しない）
+      curly: ['error', 'all']
     },
     settings: {
       react: { version: '19' } // Avoids auto-detection crash

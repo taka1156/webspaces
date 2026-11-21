@@ -1,4 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 const fadeOut = keyframes({
   '0%': { opacity: 1, scale: 1 },
@@ -16,7 +17,7 @@ export const styles = {
     position: 'fixed',
     top: 0,
     left: 0,
-    backgroundColor: '#fff',
+    backgroundColor: vars.color.background,
     zIndex: 9999,
     animationName: fadeOut,
     animationDuration: '0.35s',

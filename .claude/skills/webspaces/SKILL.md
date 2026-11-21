@@ -1,3 +1,11 @@
+---
+name: webspaces
+description: >
+  Project overview for webspaces (personal blog on Next.js + Cloudflare Pages).
+  Use when: you need the tech stack, directory structure, content pipeline
+  (brite / Cloudflare R2), key yarn commands, or page routes.
+---
+
 # Webspaces Project Overview
 
 ## Purpose

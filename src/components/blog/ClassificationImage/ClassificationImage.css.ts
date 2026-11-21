@@ -1,15 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
-  // カラー画像は黒い部分が背景に沈まないよう、ダークモード時のみ明るい下地を敷く
+  // brite の画像は明るい背景向けに作られているため、テーマに関わらず明るい下地を敷く
   backplate: style({
-    selectors: {
-      ':root[data-theme="dark"] &': {
-        boxSizing: 'border-box',
-        padding: 2,
-        backgroundColor: 'rgb(255 255 255 / 90%)',
-        borderRadius: 6
-      }
-    }
+    boxSizing: 'border-box',
+    padding: 2,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 6
   })
 };

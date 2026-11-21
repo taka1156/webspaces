@@ -5,16 +5,10 @@ import { styles } from './ClassificationTitle.css';
 
 type ClassificationTitleProps = {
   src: string;
-  /** ビルド時に判定された画像のトーン */
-  imageTone?: ImageTone;
   children: ReactNode;
 };
 
-export function ClassificationTitle({
-  src,
-  imageTone,
-  children
-}: ClassificationTitleProps) {
+export function ClassificationTitle({ src, children }: ClassificationTitleProps) {
   return (
     <>
       <div className={styles.classificationTitle}>
@@ -24,7 +18,6 @@ export function ClassificationTitle({
         <ClassificationImage
           src={src}
           alt='ロゴ'
-          imageTone={imageTone}
           className={styles.baseImgClassificationTitle}
         />
       </div>

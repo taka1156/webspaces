@@ -22,7 +22,6 @@ export function ClassificationList({ items, routePath }: ClassificationListProps
                     className={styles.classificationListItemImg}
                     src={item.image}
                     alt={`${item.name}のロゴ`}
-                    imageTone={item.imageTone}
                   />
                 </div>
               </BaseLink>

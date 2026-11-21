@@ -54,9 +54,7 @@ export default async function Tag(props: { params: TagPath }) {
   if (summaryByTag) {
     return (
       <div className={styles.container}>
-        <ClassificationTitle src={imageUrl} imageTone={tag?.imageTone}>
-          {id}
-        </ClassificationTitle>
+        <ClassificationTitle src={imageUrl}>{id}</ClassificationTitle>
         <ArticleList summaries={summaryByTag ?? []} />
       </div>
     );

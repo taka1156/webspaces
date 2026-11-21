@@ -23,7 +23,6 @@ export function ArticleBadge({ badgeType, badge }: ArticleBadgeProps) {
         className={styles.articleBadgeImg}
         src={badge.image}
         alt={`${badge.name}の画像`}
-        imageTone={badge.imageTone}
       />
     </div>
   );

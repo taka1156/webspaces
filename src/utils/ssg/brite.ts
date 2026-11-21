@@ -1,6 +1,5 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { getImageTone } from './imageTone';
 
 const CONTENT_PATHS = {
   blog: 'blog/contents',
@@ -32,22 +31,6 @@ const getArticle = async <T>(
 
 type classification = 'category' | 'tag';
 
-// 画像のトーン（黒系の単色かどうか）を付与する
-const withImageTone = async <T extends { image: string }>(
-  item: T
-): Promise<T & { imageTone: ImageTone }> => ({
-  ...item,
-  imageTone: await getImageTone(item.image)
-});
-
-const withSummaryImageTone = async (
-  summary: ArticleSummary
-): Promise<ArticleSummary> => ({
-  ...summary,
-  category: await withImageTone(summary.category),
-  tags: await Promise.all(summary.tags.map(withImageTone))
-});
-
 export const getArticleBySlug = async (
   contentType: keyof typeof CONTENT_PATHS,
   slug: string
@@ -63,12 +46,7 @@ export const getArticles = async (
   contentType: keyof typeof CONTENT_PATHS
 ): Promise<ArticleElement[]> => {
   const data = await getArticle<{ all: ArticleElement[] }>(contentType, 'all');
-  return Promise.all(
-    (data?.all ?? []).map(async (article) => ({
-      ...article,
-      summary: await withSummaryImageTone(article.summary)
-    }))
-  );
+  return data?.all ?? [];
 };
 
 export const getClassification = async (
@@ -76,10 +54,5 @@ export const getClassification = async (
   jsonKey: classification
 ): Promise<ArticleClassified[]> => {
   const data = await getArticle<ArticleClassified[]>(contentType, jsonKey);
-  return Promise.all(
-    (data ?? []).map(async (item) => ({
-      ...(await withImageTone(item)),
-      posts: await Promise.all(item.posts.map(withSummaryImageTone))
-    }))
-  );
+  return data ?? [];
 };

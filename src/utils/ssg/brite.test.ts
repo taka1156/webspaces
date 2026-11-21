@@ -82,29 +82,3 @@ describe('getArticleBySlug', () => {
     expect(result.summary.slug).toBe('test-article');
   });
 });
-
-describe('画像トーンの付与', () => {
-  beforeEach(() => {
-    vi.resetAllMocks();
-  });
-
-  it('getClassification は分類と記事内のカテゴリ・タグに imageTone を付与する', async () => {
-    const classification: ArticleClassified[] = [
-      {
-        name: 'tech',
-        image: 'https://example.com/tech.png',
-        posts: [mockArticleAll.all[0].summary]
-      }
-    ];
-    vi.mocked(readFile).mockResolvedValue(JSON.stringify(classification) as never);
-    const [item] = await getClassification('blog', 'category');
-    expect(item.imageTone).toBe('color');
-    expect(item.posts[0].category.imageTone).toBe('color');
-  });
-
-  it('getArticles は記事のカテゴリに imageTone を付与する', async () => {
-    vi.mocked(readFile).mockResolvedValue(JSON.stringify(mockArticleAll) as never);
-    const [article] = await getArticles('blog');
-    expect(article.summary.category.imageTone).toBe('color');
-  });
-});

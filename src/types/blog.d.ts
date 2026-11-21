@@ -52,7 +52,6 @@ type TocItems = TocItem[];
 type CommonBadge = {
   image: string;
   name: string;
-  imageTone?: ImageTone;
 };
 
 type CommonBadges = CommonBadge[];

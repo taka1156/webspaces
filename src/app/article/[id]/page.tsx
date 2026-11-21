@@ -4,6 +4,7 @@ import { ArticleHeader } from '@/components/blog/ArticleHeader/ArticleHeader';
 import { ArticleBody } from '@/components/shared/ArticleBody/ArticleBody';
 import { getArticleBySlug, getArticles } from '@/utils/ssg/brite';
 import { BASE_URL } from '@/constants';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
   const articles = await getArticles('blog');
@@ -25,7 +26,7 @@ export const generateMetadata = async (props: {
 
   const { title, description, slug } = summary;
   const type = 'article';
-  const url = `${BASE_URL}/${slug}`;
+  const url = `${BASE_URL}/article/${slug}`;
 
   return {
     title: title,
@@ -34,7 +35,15 @@ export const generateMetadata = async (props: {
       type: type,
       title: title,
       description: description,
-      url: url
+      url: url,
+      images: [
+        buildOgpImage(
+          BASE_URL,
+          ['article', slug],
+          OGP_SIZE.large,
+          'article ogp image'
+        )
+      ]
     },
     twitter: {
       card: 'summary_large_image'

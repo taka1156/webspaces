@@ -6,6 +6,7 @@ import { DevelopmentCard } from '@/components/profile/DevelopmentCard/Developmen
 import { SnsIcons } from '@/components/profile/SnsIcons/SnsIcons';
 import { getArticles } from '@/utils/ssg/brite';
 import { BASE_URL, GITHUB_CONTRIBUTION_IMG, PROFILE, SNS_ICONS } from '@/constants/';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 import { styles } from './page.css';
 
 const getStaticArticles = async () => {
@@ -25,6 +26,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
       title: title,
       description: description,
       url: url,
+      images: [
+        buildOgpImage(BASE_URL, ['profile'], OGP_SIZE.icon, 'profile ogp image')
+      ],
       type: 'article'
     },
     twitter: {

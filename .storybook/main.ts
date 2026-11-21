@@ -10,18 +10,18 @@ const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-coverage',
-    '@storybook/addon-docs'
-  ],
+  addons: ['@storybook/addon-links', '@storybook/addon-docs'],
   framework: {
     name: '@storybook/nextjs-vite',
     options: {
-      nextConfigPath: path.resolve(__dirname, '../next.config.js')
+      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+      builder: {
+        viteConfigPath: path.resolve(__dirname, 'vite.config.story.ts')
+      }
     }
   },
   staticDirs: ['../public'],
+  // NOTE: Codespacesの場合、CORSで動かない
   previewHead: (head) => {
     // Web Componentsのogp-cardを利用するために、ogp-card.es.jsを読み込む
     const env = loadEnv(
@@ -46,7 +46,11 @@ const config: StorybookConfig = {
 
     config.server = {
       ...config.server,
-      allowedHosts: ['localhost']
+      allowedHosts: ['localhost'],
+      ws: {
+        ...config.server?.ws,
+        clientPort: 443
+      }
     };
 
     return config;

@@ -1,18 +1,21 @@
 import type { Preview } from '@storybook/nextjs-vite';
-import { getRouter } from '@storybook/nextjs-vite/router.mock';
+import { getRouter } from '@storybook/nextjs-vite/navigation.mock';
 import { action } from 'storybook/actions';
 import { AnchorStub } from './AnchorStub';
 import 'normalize.css/normalize.css';
 
 const preview: Preview = {
   parameters: {
+    nextjs: {
+      appDirectory: true
+    },
+    interactions: {
+      disable: true
+    },
     docs: {
       story: {
         autoplay: false
       }
-    },
-    nextjs: {
-      appDirectory: true
     },
     controls: {
       matchers: {
@@ -27,6 +30,7 @@ const preview: Preview = {
     },
     decorators: [(Story: any) => AnchorStub(Story)]
   },
+
   tags: ['autodocs']
 };
 

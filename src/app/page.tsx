@@ -3,6 +3,7 @@ import { BaseHeading } from '@/components/shared/BaseHeading/BaseHeading';
 import { ArticleList } from '@/components/blog/ArticleList/ArticleList';
 import { getArticles } from '@/utils/ssg/brite';
 import { BASE_URL, LOGO_TEXT } from '@/constants';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 import { styles } from './top.css';
 
 const getStaticArticles = async () => {
@@ -23,7 +24,8 @@ export const generateMetadata = (): Metadata => {
       type: type,
       title: `${title} | ${LOGO_TEXT}`,
       description: description,
-      url: url
+      url: url,
+      images: [buildOgpImage(BASE_URL, ['top'], OGP_SIZE.icon, 'top ogp image')]
     },
     twitter: {
       card: 'summary'

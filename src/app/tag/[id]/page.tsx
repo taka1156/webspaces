@@ -45,7 +45,7 @@ export const generateMetadata = async (props: {
   };
 };
 
-const Tag = async (props: { params: TagPath }) => {
+export default async function Tag(props: { params: TagPath }) {
   const { id } = await props.params;
   const tag = await getStaticTag(id);
   const summaryByTag = tag ? tag.posts : null;
@@ -61,6 +61,4 @@ const Tag = async (props: { params: TagPath }) => {
   }
 
   return <BaseText>存在しないタグです。</BaseText>;
-};
-
-export default Tag;
+}

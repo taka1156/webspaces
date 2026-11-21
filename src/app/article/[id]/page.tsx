@@ -51,7 +51,7 @@ export const generateMetadata = async (props: {
   };
 };
 
-const Article = async (props: { params: ArticlePath }) => {
+export default async function Article(props: { params: ArticlePath }) {
   const { summary, content } = await getStaticArticle(props);
 
   if (summary != null) {
@@ -64,6 +64,4 @@ const Article = async (props: { params: ArticlePath }) => {
   } else {
     return <BaseText>存在しない記事です。</BaseText>;
   }
-};
-
-export default Article;
+}

@@ -5,7 +5,7 @@ type ContributionBoxProps = {
   githubContribution: CommonImg;
 };
 
-const ContributionBox = ({ githubContribution }: ContributionBoxProps) => {
+export function ContributionBox({ githubContribution }: ContributionBoxProps) {
   const { src, alt } = githubContribution;
 
   return (
@@ -13,6 +13,4 @@ const ContributionBox = ({ githubContribution }: ContributionBoxProps) => {
       <BaseImg src={src} alt={alt} className={styles.contributionBoxImg} />
     </div>
   );
-};
-
-export { ContributionBox };
+}

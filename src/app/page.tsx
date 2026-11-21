@@ -33,7 +33,7 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const Articles = async () => {
+export default async function Articles() {
   const articles = await getStaticArticles();
 
   return (
@@ -44,6 +44,4 @@ const Articles = async () => {
       <ArticleList summaries={articles.map(({ summary }) => summary)} />
     </div>
   );
-};
-
-export default Articles;
+}

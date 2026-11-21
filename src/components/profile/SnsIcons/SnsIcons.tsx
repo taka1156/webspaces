@@ -6,7 +6,7 @@ type SnsIconsProps = {
   snsIcons: BlogSnsIcons;
 };
 
-const SnsIcons = ({ snsIcons }: SnsIconsProps) => {
+export function SnsIcons({ snsIcons }: SnsIconsProps) {
   return (
     <ul className={styles.snsIcons}>
       {snsIcons.map((snsIcon) => (
@@ -22,6 +22,4 @@ const SnsIcons = ({ snsIcons }: SnsIconsProps) => {
       ))}
     </ul>
   );
-};
-
-export { SnsIcons };
+}

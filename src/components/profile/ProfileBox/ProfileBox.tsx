@@ -6,7 +6,7 @@ type ProfileBoxProps = {
   profile: BlogProfile;
 };
 
-const ProfileBox = ({ profile }: ProfileBoxProps) => {
+export function ProfileBox({ profile }: ProfileBoxProps) {
   const { img, introduce } = profile;
 
   return (
@@ -15,6 +15,4 @@ const ProfileBox = ({ profile }: ProfileBoxProps) => {
       <BaseText className={styles.profileText}>{introduce}</BaseText>
     </div>
   );
-};
-
-export { ProfileBox };
+}

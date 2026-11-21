@@ -11,7 +11,7 @@ type ArticleListProps = {
   summaries: ArticleSummary[];
 };
 
-const ArticleList = ({ summaries = [] }: ArticleListProps) => {
+export function ArticleList({ summaries = [] }: ArticleListProps) {
   if (summaries.length !== 0) {
     return (
       <ul className={styles.articleList}>
@@ -45,6 +45,4 @@ const ArticleList = ({ summaries = [] }: ArticleListProps) => {
   } else {
     return <BaseText>記事がありません。</BaseText>;
   }
-};
-
-export { ArticleList };
+}

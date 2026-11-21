@@ -5,7 +5,7 @@ type GithubStatusProps = {
   githubStatus: BlogGitHubStatus;
 };
 
-const GithubStatus = ({ githubStatus }: GithubStatusProps) => {
+export function GithubStatus({ githubStatus }: GithubStatusProps) {
   const { statusUrl, usedLangUrl, imgAlt } = githubStatus;
   return (
     <div className={styles.githubStatus}>
@@ -13,6 +13,4 @@ const GithubStatus = ({ githubStatus }: GithubStatusProps) => {
       <BaseImg src={usedLangUrl} alt={imgAlt} className={styles.githubStatusImg} />
     </div>
   );
-};
-
-export { GithubStatus };
+}

@@ -6,8 +6,11 @@ import { SplashAnimation } from '@/components/layout/SplashAnimation/SplashAnima
 import { TheNavigation } from '@/components/layout/TheNavigation/TheNavigation';
 import { TheCopyright } from '@/components/layout/TheCopyright/TheCopyright';
 import { COPYRIGHT_URL, BASE_URL, LOGO_TEXT, ROUTES } from '@/constants/index';
+import { THEME_INIT_SCRIPT } from '@/constants/theme';
 import 'normalize.css/normalize.css';
-import 'github-markdown-css/github-markdown-light.css';
+import 'github-markdown-css/github-markdown.css';
+import './markdown-theme.css';
+import '@/constants/theme.css';
 import './layout.css';
 
 export const metadata: Metadata = {
@@ -22,7 +25,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja'>
+    // data-theme は描画前にインラインスクリプトで付与されるため、ハイドレーション差分を抑制する
+    <html lang='ja' suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <Script
           src={`${process.env.NEXT_PUBLIC_OGP_BACKEND_URL}/lib/ogp-card.es.js`}

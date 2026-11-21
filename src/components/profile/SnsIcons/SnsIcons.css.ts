@@ -27,6 +27,7 @@ export const styles = {
     // 円に内接する正方形（約70.7%）に収まるサイズ
     width: '70%',
     height: '70%',
+    flexShrink: 0,
     color: vars.color.text
   })
 };

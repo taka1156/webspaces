@@ -10,14 +10,15 @@
     "start": "vite preview",
     "deploy": "vinext-cloudflare deploy",
     "lint": "eslint 'src/**/*.{ts,tsx}' && yarn format",
-    "lint:fix": "eslint 'src/**/*.{ts,tsx}' && yarn format",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' && yarn format:fix",
     "format": "yarn prettier --check 'src/**/*.{ts,tsx}'",
     "format:fix": "yarn prettier --write 'src/**/*.{ts,tsx}'",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test-update": "vitest --update",
     "storybook": "storybook dev -p 8000",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "knip": "knip"
   },
   "dependencies": {
     "@shikijs/langs": "^4.4.1",
@@ -85,6 +86,7 @@
     "inquirer": "^11.0.2",
     "jsdom": "^25.0.0",
     "knip": "^6.31.0",
+    "lint-staged": "^17.6.1",
     "prettier": "^3.2.5",
     "storybook": "^10.6.1",
     "typescript": "^5",

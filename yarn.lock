@@ -865,10 +865,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-response-store@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@cloudflare/workers-response-store@npm:1.1.0"
-  checksum: 10c0/88325adb976c1d30c9a6684136398c89164b8afc433d090054cc45f9da2c5933ebdc88249d04aae5ef9179322cc30569fd5db4da531d7e8ccbb31aafa15668df
+"@cloudflare/workers-response-store@npm:1.1.5":
+  version: 1.1.5
+  resolution: "@cloudflare/workers-response-store@npm:1.1.5"
+  checksum: 10c0/445d0baec1f2c6d536dfe7016f42b4f3b8e13c7668dafe54fb2526344076ea700d20ca2fd5730afe969c20c1807b38afd33ec3e7abffbb024b7dbb24fa5b8c3d
   languageName: node
   linkType: hard
 
@@ -5132,15 +5132,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vinext/cloudflare@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@vinext/cloudflare@npm:1.1.0"
+"@vinext/cloudflare@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@vinext/cloudflare@npm:1.3.3"
   dependencies:
-    "@cloudflare/workers-response-store": "npm:1.1.0"
+    "@cloudflare/workers-response-store": "npm:1.1.5"
   peerDependencies:
     "@cloudflare/vite-plugin": "*"
     cf: "*"
-    vinext: ^1.1.0
+    vinext: ^1.4.3
   peerDependenciesMeta:
     "@cloudflare/vite-plugin":
       optional: true
@@ -5149,14 +5149,14 @@ __metadata:
   bin:
     cloudflare: dist/cli.js
     vinext-cloudflare: dist/cli.js
-  checksum: 10c0/d1f73ea18293351641ad5be424d71ce6d5a74f851aaeea1fcdfe13232d4137a80719a8c4070189b56ea94b8c087cb1ccbba01d306847fcf706b7cd11606191bf
+  checksum: 10c0/3103cc25e8bfe51cf5234b4489d2d8def8711a1d60b6eca2ee1a4b595baa7df7377c7b1a051c3e881997e38f2dd9614809a627f6fad10252b18cff1275a4183a
   languageName: node
   linkType: hard
 
-"@vinext/types@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@vinext/types@npm:1.0.1"
-  checksum: 10c0/94877d945c94ad01e93a47af2ac45fa274e735d9b8f883d5f696f6f51bc7b1f515a0e25fb921f58f545bf5e7603e3c797e8d3ea6906090f34b4a691f9a4fe89c
+"@vinext/types@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@vinext/types@npm:1.0.2"
+  checksum: 10c0/90c7badc1e8c43c95b936e629a876e43c63def3bed8cd9e627fa23e7a94a7d5867be3c86e0e24275757fa0f0c0e2c1eb1e1fba6f09500375b0a37338f8ce8004
   languageName: node
   linkType: hard
 
@@ -5193,9 +5193,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-rsc@npm:^0.5.36":
-  version: 0.5.36
-  resolution: "@vitejs/plugin-rsc@npm:0.5.36"
+"@vitejs/plugin-rsc@npm:0.5.38":
+  version: 0.5.38
+  resolution: "@vitejs/plugin-rsc@npm:0.5.38"
   dependencies:
     "@rolldown/pluginutils": "npm:^1.0.1"
     es-module-lexer: "npm:^3.0.3"
@@ -5214,7 +5214,7 @@ __metadata:
   peerDependenciesMeta:
     react-server-dom-webpack:
       optional: true
-  checksum: 10c0/df3372ae1bca7a4c199970a58937fa1feeaa79e7bda05288962dad5b7768dffa27ea28b7eb77c757d53bed8375a13979ae3294281ce0a222824c68ccc0cc64d4
+  checksum: 10c0/90ea53b52356e2e66af13f1e0d218655440e6493462baf41db43883b819a7eb24c6af02bdc340eb6597a79b9a09c04b982a13edf83909cc92f1c196db58b3244
   languageName: node
   linkType: hard
 
@@ -11160,14 +11160,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.2.7":
-  version: 19.2.7
-  resolution: "react-dom@npm:19.2.7"
+"react-dom@npm:19.3.1":
+  version: 19.3.1
+  resolution: "react-dom@npm:19.3.1"
   dependencies:
-    scheduler: "npm:^0.27.0"
+    scheduler: "npm:^0.28.0"
   peerDependencies:
-    react: ^19.2.7
-  checksum: 10c0/970ff600f6e80d47d39e2f226f12f226173b3cba3382efc97c5f0cd663de9af38c7a4c11c213fb936094faeac83060d660247accaa96b752180d5b951b9cfecb
+    react: ^19.3.1
+  checksum: 10c0/382700916313b2ebc46acee80642f300bb8601eac6a9e7fefade5b8b30e66b05bf3aaa56a3c964589fcd578d27b486e847470c2697d879264e766661ff49fac7
   languageName: node
   linkType: hard
 
@@ -11209,18 +11209,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-server-dom-webpack@npm:^19.3.0":
-  version: 19.3.0
-  resolution: "react-server-dom-webpack@npm:19.3.0"
+"react-server-dom-webpack@npm:19.3.1":
+  version: 19.3.1
+  resolution: "react-server-dom-webpack@npm:19.3.1"
   dependencies:
     acorn-loose: "npm:^8.3.0"
     neo-async: "npm:^2.6.1"
     webpack-sources: "npm:^3.2.0"
   peerDependencies:
-    react: ^19.3.0
-    react-dom: ^19.3.0
+    react: ^19.3.1
+    react-dom: ^19.3.1
     webpack: ^5.59.0
-  checksum: 10c0/15c2711ce085f05fd4eeef976341927d900e2d35011629fb382c66f6e6324945affd2fcffd82782de32f0fb75341848912fdcf08dc3ac407c13d45ca5b7c788a
+  checksum: 10c0/c834f0b76470224107483efabbbe8fab7f8f45bac967d2bb2eae6d2b7c8d04f9627c5e91164c5d33fd19d5982358f103602ad707aa5e358069640628f1ede4b1
   languageName: node
   linkType: hard
 
@@ -11239,10 +11239,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.2.7":
-  version: 19.2.7
-  resolution: "react@npm:19.2.7"
-  checksum: 10c0/0bd0e2f1bbd4ba97561c6597bf8a5fec05e6476fe61e165c1065598d16668efc6715205599c94d3ddd49d36cb0f21cbf1b9bcc18ee840b805ce222c3e8d558ac
+"react@npm:19.3.1":
+  version: 19.3.1
+  resolution: "react@npm:19.3.1"
+  checksum: 10c0/f0ed036d1223562c09c8347858ca712733ea6e27a30db709ee9c3f3f176d3e9e767afce735d59956addf3d030102e256bba82dea635fc1bdb0e01107e98fef10
   languageName: node
   linkType: hard
 
@@ -11817,6 +11817,13 @@ __metadata:
   version: 0.27.0
   resolution: "scheduler@npm:0.27.0"
   checksum: 10c0/4f03048cb05a3c8fddc45813052251eca00688f413a3cee236d984a161da28db28ba71bd11e7a3dd02f7af84ab28d39fb311431d3b3772fed557945beb00c452
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.28.0":
+  version: 0.28.0
+  resolution: "scheduler@npm:0.28.0"
+  checksum: 10c0/783c8e5ce89d41273a02ed6dc0e3d24bd60e05c9e8f7e3adfc6c82e7c69935500d90e343f1ee26d592fc7504e8a2532573c6368def3e93bfe812391fa53efaf4
   languageName: node
   linkType: hard
 
@@ -13350,13 +13357,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vinext@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "vinext@npm:1.1.0"
+"vinext@npm:1.4.4":
+  version: 1.4.4
+  resolution: "vinext@npm:1.4.4"
   dependencies:
     "@unpic/react": "npm:^1.0.2"
     "@vercel/og": "npm:1.0.3"
-    "@vinext/types": "npm:^1.0.1"
+    "@vinext/types": "npm:^1.0.2"
     ipaddr.js: "npm:^2.1.0"
     magic-string: "npm:^0.30.21"
     vite-plugin-commonjs: "npm:^0.10.4"
@@ -13364,10 +13371,10 @@ __metadata:
   peerDependencies:
     "@mdx-js/rollup": ^3.0.0
     "@vitejs/plugin-react": ^5.1.4 || ^6.0.0
-    "@vitejs/plugin-rsc": ^0.5.34
-    react: ^19.2.6
-    react-dom: ^19.2.6
-    react-server-dom-webpack: ^19.2.6
+    "@vitejs/plugin-rsc": ^0.5.37
+    react: ^19.3.1
+    react-dom: ^19.3.1
+    react-server-dom-webpack: ^19.3.1
     vite: ^8.0.0
   peerDependenciesMeta:
     "@mdx-js/rollup":
@@ -13378,7 +13385,7 @@ __metadata:
       optional: true
   bin:
     vinext: dist/cli.js
-  checksum: 10c0/405fff2a9c3bdcfcb1bde2b4caddb45ffdad1edf5325a828b21e7591627308f9ea05b9f174645ed6d9b67a193da6fd6c82aa0a0298de720c280267914edb6481
+  checksum: 10c0/a19add2781378613192426f09571c779587dbd449f408936713925a8b4428e9d800a9b36bb9a929e561e1166185400a4289ee2bc22ed60337f68b661927d57e5
   languageName: node
   linkType: hard
 
@@ -13789,10 +13796,10 @@ __metadata:
     "@types/react-transition-group": "npm:^4.4.9"
     "@vanilla-extract/css": "npm:^1.16.0"
     "@vanilla-extract/vite-plugin": "npm:^5.2.2"
-    "@vinext/cloudflare": "npm:^1.1.0"
+    "@vinext/cloudflare": "npm:1.3.3"
     "@vitejs/plugin-react": "npm:^6.1.2"
     "@vitejs/plugin-react-swc": "npm:^3.8.0"
-    "@vitejs/plugin-rsc": "npm:^0.5.36"
+    "@vitejs/plugin-rsc": "npm:0.5.38"
     "@vitest/coverage-v8": "npm:^4.1.10"
     "@vitest/eslint-plugin": "npm:^1.6.24"
     cf: "npm:^1.0.0-beta.14"
@@ -13821,17 +13828,17 @@ __metadata:
     next: "npm:16.2.9"
     normalize.css: "npm:^8.0.1"
     prettier: "npm:^3.2.5"
-    react: "npm:19.2.7"
-    react-dom: "npm:19.2.7"
+    react: "npm:19.3.1"
+    react-dom: "npm:19.3.1"
     react-scroll: "npm:^1.9.0"
-    react-server-dom-webpack: "npm:^19.3.0"
+    react-server-dom-webpack: "npm:19.3.1"
     react-transition-group: "npm:^4.4.5"
     shiki: "npm:^4.3.1"
     storybook: "npm:^10.6.1"
     typescript: "npm:^5"
     typescript-eslint: "npm:^8.62.1"
     usehooks-ts: "npm:^3.1.1"
-    vinext: "npm:^1.1.0"
+    vinext: "npm:1.4.4"
     vite: "npm:8.3.0"
     vitest: "npm:^4.1.10"
     wrangler: "npm:^4.110.0"

@@ -1,6 +1,5 @@
 import { bindings, defineConfig, defineWorker } from 'cf/config';
 
-// 現在は、Cloudflare Pagesでホスティングしているため未使用
 export default defineConfig({
   worker: defineWorker({
     name: 'webspaces',

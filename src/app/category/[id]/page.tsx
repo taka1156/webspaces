@@ -61,7 +61,9 @@ export default async function Category(props: { params: CategoryPath }) {
   if (summaryByCategory) {
     return (
       <div className={styles.container}>
-        <ClassificationTitle src={imageUrl}>{id}</ClassificationTitle>
+        <ClassificationTitle src={imageUrl} imageTone={category?.imageTone}>
+          {id}
+        </ClassificationTitle>
         <ArticleList summaries={summaryByCategory} />
       </div>
     );

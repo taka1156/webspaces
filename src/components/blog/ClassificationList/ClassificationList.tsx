@@ -1,6 +1,6 @@
 import { BaseLink } from '@/components/shared/BaseLink/BaseLink';
 import { BaseHeading } from '@/components/shared/BaseHeading/BaseHeading';
-import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
+import { ClassificationImage } from '@/components/blog/ClassificationImage/ClassificationImage';
 import { styles } from './ClassificationList.css';
 
 type ClassificationListProps = {
@@ -18,10 +18,11 @@ export function ClassificationList({ items, routePath }: ClassificationListProps
               <BaseLink href={`/${routePath}/${item.name}/`} className={styles.link}>
                 <div className={styles.classificationListItemBox}>
                   <BaseHeading hLv='2'>{item.name}</BaseHeading>
-                  <BaseImg
+                  <ClassificationImage
                     className={styles.classificationListItemImg}
                     src={item.image}
                     alt={`${item.name}のロゴ`}
+                    imageTone={item.imageTone}
                   />
                 </div>
               </BaseLink>

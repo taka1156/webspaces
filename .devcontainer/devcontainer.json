@@ -16,7 +16,7 @@
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
         "anthropic.claude-code",
-        "username.errorlens"
+        "usernamehw.errorlens"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",

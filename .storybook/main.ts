@@ -14,7 +14,7 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/nextjs-vite',
     options: {
-      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+      nextConfigPath: path.resolve(__dirname, '../next.config.mjs'),
       builder: {
         viteConfigPath: path.resolve(__dirname, 'vite.config.story.ts')
       }

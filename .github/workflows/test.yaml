@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - develop
-    paths: &test-paths
+    # NOTE: pull_requestのパス判定はchangesジョブ側で行うため、ここと同期させる
+    paths:
       - 'src/**'
       - '__mocks__/**'
       - 'setupTest.ts'
@@ -18,8 +19,8 @@ on:
       - 'pnpm-workspace.yaml'
       - '.nvmrc'
       - '.github/workflows/test.yaml'
+  # NOTE: 必須チェック(test)を常に報告させるため、pathsでは絞らずジョブのifでスキップする
   pull_request:
-    paths: *test-paths
 
 concurrency:
   group: test-${{ github.ref }}
@@ -29,7 +30,40 @@ permissions:
   contents: read
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'src/**'
+              - '__mocks__/**'
+              - 'setupTest.ts'
+              - 'vite.config.ts'
+              - 'tsconfig.json'
+              - 'eslint.config.mjs'
+              - '.prettierrc.json'
+              - '.prettierignore'
+              - 'package.json'
+              - 'pnpm-lock.yaml'
+              - 'pnpm-workspace.yaml'
+              - '.nvmrc'
+              - '.github/workflows/test.yaml'
+
   test:
+    needs: changes
+    # NOTE: スキップされたジョブはSuccess扱いになり、必須チェックを満たす
+    if: github.event_name == 'push' || needs.changes.outputs.src == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

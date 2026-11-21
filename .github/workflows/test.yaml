@@ -3,23 +3,47 @@ name: Test
 on:
   push:
     branches:
-      - master
       - develop
+    paths: &test-paths
+      - 'src/**'
+      - '__mocks__/**'
+      - 'setupTest.ts'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
+      - 'eslint.config.mjs'
+      - '.prettierrc.json'
+      - '.prettierignore'
+      - 'package.json'
+      - 'yarn.lock'
+      - '.github/workflows/test.yaml'
   pull_request:
+    paths: *test-paths
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+
+      - run: corepack enable
 
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: yarn
 
-      - run: corepack enable
+      - run: yarn install --immutable
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn type-check
+
+      - run: yarn lint
 
       - run: yarn test

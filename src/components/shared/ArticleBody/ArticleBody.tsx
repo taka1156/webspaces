@@ -9,7 +9,7 @@ type ArticleBodyProps = {
   containerId?: string;
 };
 
-const ArticleBody = ({ body, containerId }: ArticleBodyProps) => {
+export function ArticleBody({ body, containerId }: ArticleBodyProps) {
   const anchorPrefix = containerId ? `${containerId}-` : '';
   const { parseCompleted, articleBodyTocs, articleBodyText } = useMarked(
     body,
@@ -30,6 +30,4 @@ const ArticleBody = ({ body, containerId }: ArticleBodyProps) => {
       )}
     </>
   );
-};
-
-export { ArticleBody };
+}

@@ -17,7 +17,12 @@ type BaseNavIconProps = {
  *
  * childrenを渡すことで、アイコンの横に任意の要素を表示可能
  */
-const BaseNavIcon = ({ isOpen, children, onClick, className }: BaseNavIconProps) => {
+export function BaseNavIcon({
+  isOpen,
+  children,
+  onClick,
+  className
+}: BaseNavIconProps) {
   return (
     <div className={clsx(styles.navIcon, className)}>
       <button
@@ -49,6 +54,4 @@ const BaseNavIcon = ({ isOpen, children, onClick, className }: BaseNavIconProps)
       </button>
     </div>
   );
-};
-
-export { BaseNavIcon };
+}

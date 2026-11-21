@@ -11,7 +11,7 @@ type IndexNavigationProps = {
   containerId?: string;
 };
 
-const IndexNavigation = ({ tocs, containerId }: IndexNavigationProps) => {
+export function IndexNavigation({ tocs, containerId }: IndexNavigationProps) {
   const { open, toggleOpen } = useOpen(false);
   const { isMobile } = useResponsive();
   const isModal = !!containerId;
@@ -68,6 +68,4 @@ const IndexNavigation = ({ tocs, containerId }: IndexNavigationProps) => {
       {list}
     </>
   );
-};
-
-export { IndexNavigation };
+}

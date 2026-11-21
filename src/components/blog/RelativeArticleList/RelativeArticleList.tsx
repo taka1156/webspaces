@@ -8,7 +8,10 @@ type RelativeArticleList = {
   relatedArticles: CommonArticles;
 };
 
-const RelativeArticleList = ({ category, relatedArticles }: RelativeArticleList) => {
+export function RelativeArticleList({
+  category,
+  relatedArticles
+}: RelativeArticleList) {
   const { name } = category;
   return (
     <div className={styles.relativeArticleList}>
@@ -42,6 +45,4 @@ const RelativeArticleList = ({ category, relatedArticles }: RelativeArticleList)
       )}
     </div>
   );
-};
-
-export { RelativeArticleList };
+}

@@ -48,7 +48,7 @@ const enableDebugMode = () => {
   return debug === 'true' || debug === '1';
 };
 
-const SplashAnimation = ({ children }: { children: React.ReactNode }) => {
+export function SplashAnimation({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
   const showSplash = useSyncExternalStore(
     (callback) => subscribe(callback, setMounted),
@@ -103,6 +103,4 @@ const SplashAnimation = ({ children }: { children: React.ReactNode }) => {
   }
 
   return <>{children}</>;
-};
-
-export { SplashAnimation };
+}

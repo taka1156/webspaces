@@ -8,7 +8,7 @@ type ClassificationListProps = {
   routePath: 'category' | 'tag';
 };
 
-const ClassificationList = ({ items, routePath }: ClassificationListProps) => {
+export function ClassificationList({ items, routePath }: ClassificationListProps) {
   if (items.length !== 0) {
     return (
       <ul className={styles.classificationList}>
@@ -33,6 +33,4 @@ const ClassificationList = ({ items, routePath }: ClassificationListProps) => {
   } else {
     return <p>{routePath}がありません。</p>;
   }
-};
-
-export { ClassificationList };
+}

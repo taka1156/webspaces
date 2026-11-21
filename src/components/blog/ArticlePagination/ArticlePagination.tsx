@@ -11,13 +11,13 @@ type ArticlePaginationProps = {
   maxPage: number;
 };
 
-const ArticlePagination = ({
+export function ArticlePagination({
   routePath,
   prevIndex,
   nextIndex,
   currentPage,
   maxPage
-}: ArticlePaginationProps) => {
+}: ArticlePaginationProps) {
   return (
     <div className={styles.articlePagination}>
       <BaseLink
@@ -42,6 +42,4 @@ const ArticlePagination = ({
       </BaseLink>
     </div>
   );
-};
-
-export { ArticlePagination };
+}

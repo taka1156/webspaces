@@ -8,7 +8,7 @@ type ArticleDateProps = {
   updatedAt: string;
 };
 
-const ArticleDate = ({ createdAt, updatedAt }: ArticleDateProps) => {
+export function ArticleDate({ createdAt, updatedAt }: ArticleDateProps) {
   const formatDate = (date = '') => {
     if (date === '') return '--/--/--';
     return dayjs(date).tz().format('YYYY/M/D');
@@ -26,6 +26,4 @@ const ArticleDate = ({ createdAt, updatedAt }: ArticleDateProps) => {
       </BaseText>
     </div>
   );
-};
-
-export { ArticleDate };
+}

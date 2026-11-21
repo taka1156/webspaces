@@ -8,7 +8,7 @@ type ArticleHeaderProps = {
   summary: ArticleSummary;
 };
 
-const ArticleHeader = ({ summary }: ArticleHeaderProps) => {
+export function ArticleHeader({ summary }: ArticleHeaderProps) {
   const { title, category, tags, created_at, updated_at } = summary;
 
   return (
@@ -21,6 +21,4 @@ const ArticleHeader = ({ summary }: ArticleHeaderProps) => {
       <ArticleTag tags={tags} />
     </div>
   );
-};
-
-export { ArticleHeader };
+}

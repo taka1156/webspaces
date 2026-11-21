@@ -7,7 +7,10 @@ type ArticleCategoryProps = {
   enableLink?: boolean;
 };
 
-const ArticleCategory = ({ category, enableLink = true }: ArticleCategoryProps) => {
+export function ArticleCategory({
+  category,
+  enableLink = true
+}: ArticleCategoryProps) {
   return (
     <div className={styles.articleCategory}>
       カテゴリー:
@@ -22,6 +25,4 @@ const ArticleCategory = ({ category, enableLink = true }: ArticleCategoryProps) 
       )}
     </div>
   );
-};
-
-export { ArticleCategory };
+}

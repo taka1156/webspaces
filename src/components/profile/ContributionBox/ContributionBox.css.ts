@@ -4,7 +4,7 @@ import { vars } from '@/constants/theme.css';
 export const styles = {
   contributionBox: style({
     overflowX: 'scroll',
-    border: `0.5px solid ${vars.color.primary}`,
+    border: `0.5px solid ${vars.color.border}`,
     borderRadius: 5
   }),
   contributionBoxImg: style({

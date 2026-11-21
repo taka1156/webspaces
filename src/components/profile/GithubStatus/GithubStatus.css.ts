@@ -6,7 +6,7 @@ export const styles = {
   githubStatus: style({
     display: 'flex',
     justifyContent: 'center',
-    border: `0.5px solid ${vars.color.primary}`,
+    border: `0.5px solid ${vars.color.border}`,
     borderRadius: 8,
     ...responsiveDown({
       sp: {

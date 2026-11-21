@@ -18,8 +18,13 @@ export const styles = {
     padding: 10,
     margin: 10,
     cursor: 'pointer',
-    border: `1px solid ${vars.color.primary}`,
-    borderRadius: 8
+    border: `1px solid ${vars.color.border}`,
+    borderRadius: 8,
+    transition: 'border-color 0.2s ease',
+    // 枠を控えめにした分、ホバー時はブランド色でクリック可能なことを示す
+    ':hover': {
+      borderColor: vars.color.primary
+    }
   }),
   classificationListItemBox: style({
     display: 'flex',

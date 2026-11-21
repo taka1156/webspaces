@@ -11,7 +11,7 @@ export const styles = {
     display: 'block',
     padding: 10,
     margin: 10,
-    border: `1px solid ${vars.color.primary}`,
+    border: `1px solid ${vars.color.border}`,
     borderRadius: 8
   }),
   articleListItemBorder: style({

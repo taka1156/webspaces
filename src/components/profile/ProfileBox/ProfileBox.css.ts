@@ -9,7 +9,7 @@ export const styles = {
     height: 130,
     padding: 0,
     margin: '0 auto',
-    border: `0.5px solid ${vars.color.primary}`,
+    border: `0.5px solid ${vars.color.border}`,
     borderRadius: 8,
     ...responsiveDown({
       sp: {

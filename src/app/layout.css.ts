@@ -45,7 +45,7 @@ globalStyle('.markdown-body h1, .markdown-body h2, .markdown-body h3', {
 });
 
 globalStyle('.markdown-body img', {
-  border: `0.2px solid ${vars.color.primary}`,
+  border: `0.2px solid ${vars.color.border}`,
   padding: '5px'
 });
 

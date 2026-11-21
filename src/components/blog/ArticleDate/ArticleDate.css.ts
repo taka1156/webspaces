@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   articleDate: style({
@@ -10,7 +11,7 @@ export const styles = {
   articleDateImg: style({
     width: 20,
     height: 20,
-    fill: 'rgb(100 149 237)'
+    color: vars.color.text
   }),
   articleDateText: style({
     margin: 0

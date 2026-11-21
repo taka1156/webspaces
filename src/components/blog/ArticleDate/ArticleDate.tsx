@@ -1,4 +1,4 @@
-import { BaseImg } from '@/components/shared/BaseImg/BaseImg';
+import { BaseIcon } from '@/components/shared/BaseIcon/BaseIcon';
 import { BaseText } from '@/components/shared/BaseText/BaseText';
 import { dayjs } from '@/utils/dayjs';
 import { styles } from './ArticleDate.css';
@@ -16,7 +16,7 @@ export function ArticleDate({ createdAt, updatedAt }: ArticleDateProps) {
 
   return (
     <div className={styles.articleDate}>
-      <BaseImg
+      <BaseIcon
         src='/img/icon/utils/date.svg'
         alt='日付'
         className={styles.articleDateImg}

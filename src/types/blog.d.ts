@@ -7,6 +7,8 @@ type BlogSnsIcon = {
   name: string;
   img: string;
   link: string;
+  /** 単色ロゴの場合 true。文字色で描画し、ライト/ダークモードに追従させる */
+  monochrome?: boolean;
 };
 
 type BlogSnsIcons = BlogSnsIcon[];
@@ -24,6 +26,10 @@ type BlogProfile = {
 type BlogGitHubStatus = {
   statusUrl: string;
   usedLangUrl: string;
+  /** ダークモード用の statusUrl */
+  darkStatusUrl: string;
+  /** ダークモード用の usedLangUrl */
+  darkUsedLangUrl: string;
   imgAlt: string;
 };
 

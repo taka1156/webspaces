@@ -1,11 +1,12 @@
 import { responsiveDown } from '@/utils/breakpoint';
+import { vars } from '@/constants/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
   githubStatus: style({
     display: 'flex',
     justifyContent: 'center',
-    border: '0.5px solid rgb(100 149 237 / 90%)',
+    border: `0.5px solid ${vars.color.primary}`,
     borderRadius: 8,
     ...responsiveDown({
       sp: {

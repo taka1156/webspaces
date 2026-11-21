@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   theCopyright: style({
@@ -6,10 +7,10 @@ export const styles = {
     padding: 0,
     margin: 0,
     textAlign: 'left',
-    backgroundColor: 'rgb(100 149 237 / 90%)'
+    backgroundColor: vars.color.nav
   }),
   theCopyrightLink: style({
-    color: 'white'
+    color: vars.color.onPrimary
   }),
   theCopyrightText: style({
     margin: 0

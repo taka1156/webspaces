@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   classificationList: style({
@@ -7,7 +8,7 @@ export const styles = {
     padding: 0
   }),
   link: style({
-    color: 'black',
+    color: vars.color.text,
     textAlign: 'left',
     wordBreak: 'break-word',
     overflowWrap: 'break-word'
@@ -17,7 +18,7 @@ export const styles = {
     padding: 10,
     margin: 10,
     cursor: 'pointer',
-    border: '1px solid rgb(100 149 237)',
+    border: `1px solid ${vars.color.primary}`,
     borderRadius: 8
   }),
   classificationListItemBox: style({

@@ -1,9 +1,10 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   contributionBox: style({
     overflowX: 'scroll',
-    border: '0.5px solid rgb(100 149 237 / 90%)',
+    border: `0.5px solid ${vars.color.primary}`,
     borderRadius: 5
   }),
   contributionBoxImg: style({

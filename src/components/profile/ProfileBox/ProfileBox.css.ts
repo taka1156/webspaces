@@ -1,4 +1,5 @@
 import { responsiveDown } from '@/utils/breakpoint';
+import { vars } from '@/constants/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
@@ -8,7 +9,7 @@ export const styles = {
     height: 130,
     padding: 0,
     margin: '0 auto',
-    border: '0.5px solid rgb(100 149 237 / 90%)',
+    border: `0.5px solid ${vars.color.primary}`,
     borderRadius: 8,
     ...responsiveDown({
       sp: {

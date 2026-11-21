@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   articleList: style({
@@ -10,17 +11,17 @@ export const styles = {
     display: 'block',
     padding: 10,
     margin: 10,
-    border: '1px solid rgb(100 149 237)',
+    border: `1px solid ${vars.color.primary}`,
     borderRadius: 8
   }),
   articleListItemBorder: style({
     margin: 5,
-    border: '1px solid lightgray'
+    border: `1px solid ${vars.color.border}`
   }),
   articleListItemLink: style({
-    color: 'rgb(100 149 237)',
+    color: vars.color.primaryText,
     ':hover': {
-      color: 'rgb(100 149 237 / 60%)'
+      color: vars.color.primary
     }
   }),
   articleListItemText: style({

@@ -1,4 +1,5 @@
 import { responsiveDown } from '@/utils/breakpoint';
+import { vars } from '@/constants/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
@@ -16,7 +17,7 @@ export const styles = {
     textAlign: 'center',
     padding: '0 0 10px',
     margin: 0,
-    borderBottom: '2.5px solid lightgray'
+    borderBottom: `2.5px solid ${vars.color.border}`
   }),
   profileSubHeading: style({
     textAlign: 'center',

@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { vars } from '@/constants/theme.css';
 
 export const styles = {
   common: style({
@@ -11,13 +12,13 @@ export const styles = {
     borderRadius: 20
   }),
   category: style({
-    color: 'white',
-    backgroundColor: 'rgb(100 149 237)'
+    color: vars.color.onPrimary,
+    backgroundColor: vars.color.primaryFill
   }),
   tag: style({
-    color: 'rgb(100 149 237)',
+    color: vars.color.primaryText,
     backgroundColor: 'transparent',
-    border: '1px solid rgb(100 149 237)'
+    border: `1px solid ${vars.color.primaryText}`
   }),
   articleBadgeImg: style({
     width: 20,

@@ -29,6 +29,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # NOTE: Environment secretsを参照するためにenvironmentを指定する
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,6 +49,9 @@ jobs:
 
       - name: Build
         run: pnpm build-storybook
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          NEXT_PUBLIC_OGP_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_OGP_BACKEND_URL }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

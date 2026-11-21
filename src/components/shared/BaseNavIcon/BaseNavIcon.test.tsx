@@ -35,6 +35,19 @@ describe('BaseNavIcon', () => {
     expect(container.firstChild).toHaveClass('custom');
   });
 
+  it('type="button" を持つ', () => {
+    render(<BaseNavIcon isOpen={false} onClick={noop} />);
+    expect(screen.getByTestId('targetNavButton')).toHaveAttribute('type', 'button');
+  });
+
+  it.each([true, false])('isOpen=%s のとき aria-expanded に反映される', (isOpen) => {
+    render(<BaseNavIcon isOpen={isOpen} onClick={noop} />);
+    expect(screen.getByTestId('targetNavButton')).toHaveAttribute(
+      'aria-expanded',
+      String(isOpen)
+    );
+  });
+
   describe('isOpen=false のとき', () => {
     it('top スパンが close スタイルを持つ', () => {
       render(<BaseNavIcon isOpen={false} onClick={noop} />);

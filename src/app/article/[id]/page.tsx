@@ -25,7 +25,7 @@ export const generateMetadata = async (props: {
 
   const { title, description, slug } = summary;
   const type = 'article';
-  const url = `${BASE_URL}/${slug}`;
+  const url = `${BASE_URL}/article/${slug}`;
 
   return {
     title: title,

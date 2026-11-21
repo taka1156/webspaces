@@ -3,6 +3,7 @@ import { BaseHeading } from '@/components/shared/BaseHeading/BaseHeading';
 import { ClassificationList } from '@/components/blog/ClassificationList/ClassificationList';
 import { getClassification } from '@/utils/ssg/brite';
 import { BASE_URL } from '@/constants';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 import { styles } from './tags.css';
 
 const getStaticTags = async () => {
@@ -23,7 +24,8 @@ export const generateMetadata = (): Metadata => {
       type: type,
       title: title,
       description: description,
-      url: url
+      url: url,
+      images: [buildOgpImage(BASE_URL, ['tags'], OGP_SIZE.icon, 'tags ogp image')]
     },
     twitter: {
       card: 'summary'

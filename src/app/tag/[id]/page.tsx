@@ -4,6 +4,7 @@ import { ClassificationTitle } from '@/components/blog/ClassificationTitle/Class
 import { ArticleList } from '@/components/blog/ArticleList/ArticleList';
 import { getClassification } from '@/utils/ssg/brite';
 import { BASE_URL } from '@/constants';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 import { styles } from './tag.css';
 
 export const generateStaticParams = async () => {
@@ -35,7 +36,8 @@ export const generateMetadata = async (props: {
       type: type,
       title: title,
       description: description,
-      url: url
+      url: url,
+      images: [buildOgpImage(BASE_URL, ['tag', id], OGP_SIZE.icon, 'tag ogp image')]
     },
     twitter: {
       card: 'summary'

@@ -4,6 +4,7 @@ Shared instructions for Claude Code and GitHub Copilot. Claude Code loads this f
 
 ## Response Style
 
+- Always respond to the user in **Japanese** in chat.
 - Always state the **basis (root cause / reasoning)** and **conclusion** explicitly.
 - Do not present a conclusion without supporting reasoning.
 - Structure responses as: **Conclusion → Basis → Options (if any) → Next action**

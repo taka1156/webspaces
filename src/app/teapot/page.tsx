@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { BASE_URL } from '@/constants';
+import { OGP_SIZE, buildOgpImage } from '@/utils/ogp';
 
 export const generateMetadata = (): Metadata => {
   const URL = `${BASE_URL}/teapot/`;
@@ -18,7 +19,10 @@ export const generateMetadata = (): Metadata => {
       type: type,
       title: title,
       description: description,
-      url: url
+      url: url,
+      images: [
+        buildOgpImage(BASE_URL, ['teapot'], OGP_SIZE.icon, 'teapot ogp image')
+      ]
     },
     twitter: {
       card: 'summary'

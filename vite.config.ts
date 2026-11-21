@@ -66,6 +66,9 @@ export default defineConfig(({ mode }) => {
       globals: true,
       setupFiles: ['setupTest.ts'],
       environment: 'jsdom',
+      // Node 25+ は Web Storage が既定で有効になり、Node 側の localStorage が
+      // jsdom の localStorage を上書きしてしまうため、テストワーカーでは無効化する
+      execArgv: ['--no-experimental-webstorage'],
       reporters: ['default'],
       coverage: {
         reporter: ['json', 'html'],

@@ -3,7 +3,7 @@
   "dockerComposeFile": "./docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "yarn install && yarn husky",
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}

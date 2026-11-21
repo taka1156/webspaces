@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky",
     "sync": "node scripts/sync-r2-assets.mjs",
     "dev": "next dev -p 8000",
     "build": "next build",

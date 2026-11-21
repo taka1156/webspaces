@@ -1,6 +1,6 @@
 /// <reference types="vitest" >
 import { resolve } from 'node:path';
-import { defineConfig, loadEnv, type Plugin } from 'vite';
+import { defineConfig, loadEnv, type Plugin, type PluginOption } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
@@ -26,24 +26,37 @@ function stripVanillaExtractSsrExternal(): Plugin {
   };
 }
 
+/** mode ごとのアプリ用プラグイン構成 */
+function getAppPlugins(mode: string): PluginOption[] {
+  // テストは React の変換だけでよい
+  if (mode === 'test') {
+    return [react()];
+  }
+
+  const app = vinext({ prerender: { routes: '*' } });
+
+  // 静的アセットのみの Worker 構成では dev 時にページを描画できないため、
+  // dev は Cloudflare plugin を使わず vinext 単体で動かす
+  if (mode === 'development') {
+    return [app];
+  }
+
+  return [
+    app,
+    cloudflare({
+      viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] }
+    }),
+    stripVanillaExtractSsrExternal()
+  ];
+}
+
 export default defineConfig(({ mode }) => {
   // BASE_URL はビルド時に確定させてバンドルへ埋め込む。
   // Workers の実行時には build variables が process.env に存在しないため。
   const { BASE_URL } = { ...loadEnv(mode, process.cwd(), ''), ...process.env };
 
-  const appPlugins =
-    mode === 'test'
-      ? [react()]
-      : [
-          vinext({ prerender: { routes: '*' } }),
-          cloudflare({
-            viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] }
-          }),
-          stripVanillaExtractSsrExternal()
-        ];
-
   return {
-    plugins: [...appPlugins, vanillaExtractPlugin()],
+    plugins: [...getAppPlugins(mode), vanillaExtractPlugin()],
     define:
       mode === 'test'
         ? {}

@@ -51,16 +51,23 @@ function getAppPlugins(mode: string): PluginOption[] {
 }
 
 export default defineConfig(({ mode }) => {
-  // BASE_URL はビルド時に確定させてバンドルへ埋め込む。
+  // NEXT_PUBLIC_BASE_URL はビルド時に確定させてバンドルへ埋め込む。
   // Workers の実行時には build variables が process.env に存在しないため。
-  const { BASE_URL } = { ...loadEnv(mode, process.cwd(), ''), ...process.env };
+  const { NEXT_PUBLIC_BASE_URL } = {
+    ...loadEnv(mode, process.cwd(), ''),
+    ...process.env
+  };
 
   return {
     plugins: [...getAppPlugins(mode), vanillaExtractPlugin()],
     define:
       mode === 'test'
         ? {}
-        : { 'process.env.BASE_URL': JSON.stringify(BASE_URL ?? '') },
+        : {
+            'process.env.NEXT_PUBLIC_BASE_URL': JSON.stringify(
+              NEXT_PUBLIC_BASE_URL ?? ''
+            )
+          },
     test: {
       include: ['**/*.test.{ts,tsx}'],
       globals: true,

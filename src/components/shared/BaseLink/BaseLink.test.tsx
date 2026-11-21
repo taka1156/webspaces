@@ -40,6 +40,13 @@ describe('BaseLink', () => {
       expect(a).toHaveAttribute('target', '_blank');
       expect(a).toHaveAttribute('rel', 'noopener noreferrer');
     });
+
+    it('パス中に http を含んでも内部リンクとして扱う', () => {
+      const { container } = render(
+        <BaseLink href='/blog/http-guide'>Guide</BaseLink>
+      );
+      expect(container.querySelector('[data-nextlink="true"]')).toBeInTheDocument();
+    });
   });
 
   describe('外部リンク（http を含む）', () => {

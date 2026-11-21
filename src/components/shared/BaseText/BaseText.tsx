@@ -12,8 +12,10 @@ import {
 type BaseTextProps = ComponentProps<'p'> & {
   /**
    * - Base: #333
-   * - Strong: #B3B3B3
+   * - Muted: #767676 (補助テキスト用)
    * - Highlight: #616161
+   * - White: #fff
+   * - Theme: #6495ED (THEME_COLOR.main)
    */
   color?: FONT_COLOR;
   /**
@@ -26,7 +28,7 @@ type BaseTextProps = ComponentProps<'p'> & {
    * - Small: 14px
    * - Medium: 16px
    * - Large: 18px
-   * - Extra Large: 22px
+   * - Extra Large: 24px
    */
   size?: FONT_SIZE;
 };

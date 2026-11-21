@@ -26,6 +26,8 @@ export function BaseNavIcon({
   return (
     <div className={clsx(styles.navIcon, className)}>
       <button
+        type='button'
+        aria-expanded={isOpen}
         onClick={onClick}
         className={styles.buttonReset}
         data-testid='targetNavButton'

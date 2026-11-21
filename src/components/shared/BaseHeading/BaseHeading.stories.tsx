@@ -20,7 +20,7 @@ type Story = StoryObj<typeof BaseHeading>;
 
 export const Basic: Story = {
   args: {
-    hLv: '1'
-  },
-  render: (args) => <BaseHeading {...args}>Heading Text</BaseHeading>
+    hLv: '1',
+    children: 'Heading Text'
+  }
 };

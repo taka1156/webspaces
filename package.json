@@ -5,7 +5,8 @@
   "scripts": {
     "sync": "node scripts/sync-r2-assets.mjs",
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "ogp": "node scripts/generate-ogp.mjs",
+    "build": "yarn ogp && vite build",
     "start": "vite preview",
     "deploy": "vinext-cloudflare deploy",
     "lint": "eslint 'src/**/*.{ts,tsx}' && yarn format",

@@ -17,6 +17,7 @@ on:
       - 'public/**'
       - 'package.json'
       - 'yarn.lock'
+      - '.nvmrc'
       - '.github/workflows/storybook.yaml'
   workflow_dispatch:
 
@@ -37,7 +38,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: yarn
 
       - name: Install dependencies

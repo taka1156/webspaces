@@ -10,7 +10,7 @@
     "start": "vite preview",
     "deploy": "vinext-cloudflare deploy",
     "lint": "eslint 'src/**/*.{ts,tsx}' && yarn format",
-    "lint:fix": "eslint 'src/**/*.{ts,tsx}' && yarn format",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' && yarn format:fix",
     "format": "yarn prettier --check 'src/**/*.{ts,tsx}'",
     "format:fix": "yarn prettier --write 'src/**/*.{ts,tsx}'",
     "type-check": "tsc --noEmit",

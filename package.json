@@ -65,7 +65,7 @@
     "@vanilla-extract/css": "^1.16.0",
     "@vanilla-extract/vite-plugin": "^5.2.2",
     "@vitejs/plugin-react": "^6.1.2",
-    "@vitejs/plugin-rsc": "0.5.38",
+    "@vitejs/plugin-rsc": "0.5.39",
     "@vitest/coverage-v8": "^4.1.10",
     "@vitest/eslint-plugin": "^1.6.24",
     "cf": "1.0.0-beta.18",

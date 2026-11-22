@@ -187,7 +187,7 @@ importers:
         version: 4.6.0
       '@vinext/cloudflare':
         specifier: 1.4.0
-        version: 1.4.0(@cloudflare/vite-plugin@2.0.0-beta.sha-91c870c02(@types/node@20.19.43)(vite@8.3.8(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.4)(yaml@2.9.1))(workerd@1.20261119.1))(cf@1.0.0-beta.18(@types/node@20.19.43))(vinext@1.4.4(4a28aa77024e13d70c4d74125160d614))
+        version: 1.4.0(@cloudflare/vite-plugin@2.0.0-beta.sha-91c870c02(@types/node@20.19.43)(vite@8.3.8(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.4)(yaml@2.9.1))(workerd@1.20261119.1))(cf@1.0.0-beta.18(@types/node@20.19.43))(vinext@1.4.6(4a28aa77024e13d70c4d74125160d614))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -234,8 +234,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(react@19.3.1)
       vinext:
-        specifier: 1.4.4
-        version: 1.4.4(4a28aa77024e13d70c4d74125160d614)
+        specifier: 1.4.6
+        version: 1.4.6(4a28aa77024e13d70c4d74125160d614)
     devDependencies:
       '@aws-sdk/client-s3':
         specifier: ^3.1088.0
@@ -5973,8 +5973,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vinext@1.4.4:
-    resolution: {integrity: sha512-mmnYmAGwpooZ8mrnVs+Z8grEaHwf5rIIcxgYZgm0mlWtYzxX+dThmldv4TgfChGyGmo3KtZEeSxzQfTL7lz2hw==}
+  vinext@1.4.6:
+    resolution: {integrity: sha512-xMqg/35SeEP8rimU2e7i0k8XhRJRCTbimIeHYKDPIFfmycoxgEkN1z488yGV1D/JsdE2X6cdGqYyW/1gCTH9dA==}
     engines: {node: '>=22'}
     hasBin: true
     peerDependencies:
@@ -8634,10 +8634,10 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@vinext/cloudflare@1.4.0(@cloudflare/vite-plugin@2.0.0-beta.sha-91c870c02(@types/node@20.19.43)(vite@8.3.8(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.4)(yaml@2.9.1))(workerd@1.20261119.1))(cf@1.0.0-beta.18(@types/node@20.19.43))(vinext@1.4.4(4a28aa77024e13d70c4d74125160d614))':
+  '@vinext/cloudflare@1.4.0(@cloudflare/vite-plugin@2.0.0-beta.sha-91c870c02(@types/node@20.19.43)(vite@8.3.8(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.4)(yaml@2.9.1))(workerd@1.20261119.1))(cf@1.0.0-beta.18(@types/node@20.19.43))(vinext@1.4.6(4a28aa77024e13d70c4d74125160d614))':
     dependencies:
       '@cloudflare/workers-response-store': 1.2.0
-      vinext: 1.4.4(4a28aa77024e13d70c4d74125160d614)
+      vinext: 1.4.6(4a28aa77024e13d70c4d74125160d614)
     optionalDependencies:
       '@cloudflare/vite-plugin': 2.0.0-beta.sha-91c870c02(@types/node@20.19.43)(vite@8.3.8(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.4)(yaml@2.9.1))(workerd@1.20261119.1)
       cf: 1.0.0-beta.18(@types/node@20.19.43)
@@ -12181,7 +12181,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.4
 
-  vinext@1.4.4(4a28aa77024e13d70c4d74125160d614):
+  vinext@1.4.6(4a28aa77024e13d70c4d74125160d614):
     dependencies:
       '@unpic/react': 1.0.2(next@16.4.6(@babel/core@7.29.13(supports-color@10.2.2))(@types/node@20.19.43)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@vercel/og': 1.0.3(@types/node@20.19.43)

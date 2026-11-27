@@ -3,7 +3,7 @@ minimumReleaseAge: 0
 
 # yarn の resolutions から移行
 overrides:
-  '@types/react': 19.3.0
+  '@types/react': 19.3.3
   '@types/react-dom': 19.3.0
 
 # pnpm はデフォルトで依存パッケージのビルドスクリプトを実行しないため、必要なものだけ許可する
